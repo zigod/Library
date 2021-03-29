@@ -18,17 +18,20 @@ namespace Library
             polnjenje();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
 
         private void polnjenje()
         {
-            List<knjige> lol = baza.izpisvsehknjig();
-            foreach (knjige x in lol)
+            List<knjige> knjiga = baza.izpisvsehknjig();
+            List<Users> user = baza.IzpisUsers();
+            foreach (knjige x in knjiga)
             {
-                dataGridView1.Rows.Add(new object[] { x.inventarna_st,x.Naslov,x.Avtor,x.Leto,x.Section,x.Zalozba });
+                knjigegrid.Rows.Add(new object[] { x.inventarna_st,x.Naslov,x.Avtor,x.Leto,x.Section,x.Zalozba });
+            }
+
+            foreach (Users x in user)
+            {
+                usersgrid.Rows.Add(new object[] { x.name, x.surname, x.telephone, x.email });
             }
         }
 

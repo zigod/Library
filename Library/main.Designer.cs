@@ -31,7 +31,7 @@ namespace Library
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.knjigegrid = new System.Windows.Forms.DataGridView();
             this.inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nasl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.avtor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +40,16 @@ namespace Library
             this.publ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.usersgrid = new System.Windows.Forms.DataGridView();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.knjigegrid)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usersgrid)).BeginInit();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.dodajanjeClanovPage = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -79,7 +89,7 @@ namespace Library
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.knjigegrid);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -88,22 +98,21 @@ namespace Library
             this.tabPage1.Text = "Izpis";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // knjigegrid
             // 
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.knjigegrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.knjigegrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.knjigegrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.inv,
             this.nasl,
             this.avtor,
             this.let,
             this.sec,
             this.publ});
-            this.dataGridView1.Location = new System.Drawing.Point(-32, 113);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1268, 485);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.knjigegrid.Location = new System.Drawing.Point(-20, 113);
+            this.knjigegrid.Name = "knjigegrid";
+            this.knjigegrid.Size = new System.Drawing.Size(1100, 485);
+            this.knjigegrid.TabIndex = 0;
             // 
             // inv
             // 
@@ -140,6 +149,7 @@ namespace Library
             // 
             // tabPage2
             // 
+
             this.tabPage2.Controls.Add(this.tabControl2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -151,6 +161,7 @@ namespace Library
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.usersgrid);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1280, 594);
@@ -158,6 +169,38 @@ namespace Library
             this.tabPage3.Text = "Člani";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // usersgrid
+            // 
+            this.usersgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usersgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name,
+            this.surname,
+            this.tel,
+            this.ad});
+            this.usersgrid.Location = new System.Drawing.Point(6, 35);
+            this.usersgrid.Name = "usersgrid";
+            this.usersgrid.Size = new System.Drawing.Size(1036, 239);
+            this.usersgrid.TabIndex = 0;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Ime";
+            this.name.Name = "name";
+            // 
+            // surname
+            // 
+            this.surname.HeaderText = "Surname";
+            this.surname.Name = "surname";
+            // 
+            // tel
+            // 
+            this.tel.HeaderText = "Telefon";
+            this.tel.Name = "tel";
+            // 
+            // ad
+            // 
+            this.ad.HeaderText = "Naslov";
+            this.ad.Name = "ad";
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.dodajanjeClanovPage);
@@ -341,13 +384,15 @@ namespace Library
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 634);
+            this.ClientSize = new System.Drawing.Size(1037, 634);
             this.Controls.Add(this.tabControl1);
             this.Name = "main";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.knjigegrid)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.usersgrid)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.dodajanjeClanovPage.ResumeLayout(false);
@@ -361,7 +406,7 @@ namespace Library
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView knjigegrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn inv;
         private System.Windows.Forms.DataGridViewTextBoxColumn nasl;
         private System.Windows.Forms.DataGridViewTextBoxColumn avtor;
@@ -369,6 +414,11 @@ namespace Library
         private System.Windows.Forms.DataGridViewTextBoxColumn sec;
         private System.Windows.Forms.DataGridViewTextBoxColumn publ;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView usersgrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ad;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage dodajanjeClanovPage;
         private System.Windows.Forms.Button dodajClanaButton;
