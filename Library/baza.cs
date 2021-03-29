@@ -17,6 +17,31 @@ namespace Library
 
         }
 
+        public static bool Prijava(string username, string password)
+        {
+            SQLiteConnection con = connect();
+
+            con.Open();
+            bool preveritev = false;
+            using (SQLiteCommand com = new SQLiteCommand(con))
+            {
+                com.CommandText = "SELECT username FROM users WHERE (username='" + username + "') AND (password='" + password + "');";
+
+                SQLiteDataReader read = com.ExecuteReader();
+                while (read.Read())
+                {
+                    string user = read.GetString(0);
+
+                    if (user != null)
+                    {
+                        preveritev = true;
+                    }
+                }
+                com.Dispose();
+            }
+            return preveritev;
+        }
+
         public static List<knjige>izpisvsehknjig()
         {
             List<knjige> knj = new List<knjige>();
