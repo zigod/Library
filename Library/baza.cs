@@ -41,6 +41,40 @@ namespace Library
             }
             return preveritev;
         }
+        public static Users IzpisVsePodatkeOUser(string ime, string sur, string tel, string adi)
+        {
+            SQLiteConnection con = connect();
+            con.Open();
+
+            using (SQLiteCommand com = new SQLiteCommand(con))
+            {
+                com.CommandText = "SELECT * FROM USERS WHERE name = '" + ime + "' AND surname = '" + sur + "' AND tel = '" + tel + "' AND address = '" + adi + ";';
+                SQLiteDataReader read = com.ExecuteReader();
+                while (read.Read())
+                {
+
+                    string name = read.GetString(1);
+                    string surname = read.GetString(2);
+                    string telephone = read.GetString(3);
+                    string address = read.GetString(4);
+                    string email = read.GetString(5);
+                    string user = read.GetString(6);
+                    string pass = read.GetString(7);
+                    string notes = read.GetString(8);
+
+
+                    Users user = new Users(name, surname, tel, email);
+
+
+                    us.Add(user);
+
+                }
+                com.Dispose();
+                con.Close();
+                return us;
+
+            }
+        }
 
         public static List<Users>IzpisUsers()
         {

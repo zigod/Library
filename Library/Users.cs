@@ -24,5 +24,7 @@ namespace Library
             telephone = tel;
             email = em;
         }
+
+        public Users(string )
     }
 }
