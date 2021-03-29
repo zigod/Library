@@ -12,7 +12,7 @@ namespace Library
         public static SQLiteConnection connect()
         {
             SQLiteConnection con;
-            con = new SQLiteConnection("data source = librarybaza.db");
+            con = new SQLiteConnection("data source = librarybaza.sqlite");
             return con;
 
         }
