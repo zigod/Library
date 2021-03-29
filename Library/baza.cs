@@ -7,14 +7,44 @@ using System.Data.SQLite;
 
 namespace Library
 {
-    class baza
+    public class baza
     {
         public static SQLiteConnection connect()
         {
             SQLiteConnection con;
-            con = new SQLiteConnection("data source = librarybaza.db");
+            string cs = @"URI=file:C:\Users\Ziga\source\repos\Library\Library\bin\Debug\librarybaza.sqlite";
+            con = new SQLiteConnection(cs);
             return con;
 
         }
+
+        public static bool Prijava(string username, string password)
+        {
+            SQLiteConnection con = connect();
+            
+            con.Open();
+            bool preveritev = false;
+            using (SQLiteCommand com = new SQLiteCommand(con))
+            {
+                com.CommandText = "SELECT username FROM users WHERE (username='" + username + "') AND (password='" + password + "');";
+
+                SQLiteDataReader read = com.ExecuteReader();
+                while (read.Read())
+                {
+                    string user = read.GetString(0);
+                    
+                    if (user != null)
+                    {
+                        preveritev = true;
+                    }
+                }
+                com.Dispose();
+            }
+            return preveritev;
+        }
+
+
+        
     }
 }
+    
