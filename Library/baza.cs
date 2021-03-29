@@ -105,5 +105,18 @@ namespace Library
 
             }
         }
+
+        public static void DodajClana(string ime, string priimek, string tel, string naslov, string email, string opombe)
+        {
+            SQLiteConnection con = connect();
+
+            con.Open();
+            using (SQLiteCommand com = new SQLiteCommand(con))
+            {
+                com.CommandText = "INSERT INTO users(name , surname, tel, address, email, notes) VALUES('" + ime + "','" + priimek + "','" + tel + "','" + naslov + "','" + email + "','" + opombe + "');";
+                com.ExecuteNonQuery();
+            }
+            con.Close();
+        }
     }
 }

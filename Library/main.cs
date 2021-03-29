@@ -34,5 +34,17 @@ namespace Library
                 usersgrid.Rows.Add(new object[] { x.name, x.surname, x.telephone, x.email });
             }
         }
+
+        private void dodajClanaButton_Click(object sender, EventArgs e)
+        {
+            string ime = imeBox.Text;
+            string priimek = priimekBox.Text;
+            string telefon = telefonBox.Text;
+            string naslov = naslovBox.Text;
+            string email = gmailBox.Text;
+            string opombe = opombeBox.Text;
+
+            baza.DodajClana(ime, priimek, telefon, naslov, email, opombe);
+        }
     }
 }
