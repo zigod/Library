@@ -42,6 +42,37 @@ namespace Library
             return preveritev;
         }
 
+        public static List<Users>IzpisUsers()
+        {
+            List<Users> us = new List<Users>();
+            SQLiteConnection con = connect();
+            con.Open();
+
+            using (SQLiteCommand com = new SQLiteCommand(con))
+            {
+                com.CommandText = "SELECT name,surname,tel,email FROM users;";
+                SQLiteDataReader read = com.ExecuteReader();
+                while (read.Read())
+                {
+
+                    string name = read.GetString(0);
+                    string surname = read.GetString(1);
+                    string tel = read.GetString(2);
+                    string email = read.GetString(3);
+                 
+                    Users user = new Users(name,surname,tel,email);
+
+
+                    us.Add(user);
+
+                }
+                com.Dispose();
+                con.Close();
+                return us;
+
+            }
+        }
+
         public static List<knjige>izpisvsehknjig()
         {
             List<knjige> knj = new List<knjige>();
