@@ -18,16 +18,16 @@ namespace Library
         public string password;
         public string notes;
 
-
-        public Users(string n,string sn,string tel,string nas, string em, string not)
+        public Users(string ime, string priimek, string telefon, string naslov, string gmail, string opombe)
         {
-            name = n;
-            surname = sn;
-            telephone = tel;
-            address = nas;
-            email = em;
-            notes = not;
+            name = ime;
+            surname = priimek;
+            telephone = telefon;
+            address = naslov;
+            email = gmail;
+            notes = opombe;
         }
+
 
         public Users(int i, string n,string sn,string tel,string em)
         {
@@ -45,5 +45,6 @@ namespace Library
             password = pass;
             notes = not;
         }
+
     }
 }

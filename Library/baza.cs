@@ -41,6 +41,7 @@ namespace Library
             }
             return preveritev;
         }
+      
         public static knjige PodatkiOknjigi(int idk)
         {
             knjige kn;
@@ -51,7 +52,6 @@ namespace Library
             using (SQLiteCommand com = new SQLiteCommand(con))
             {
                 com.CommandText = "SELECT k.id,k.title,k.shop,k.notes,s.name,k.year,k.author,k.publisher,k.lost FROM books k INNER JOIN sections s ON s.id = k.section_id WHERE k.id = " + idk + ";";
-
                 SQLiteDataReader read = com.ExecuteReader();
                 read.Read();
                 int it = read.GetInt32(0);
@@ -179,7 +179,6 @@ namespace Library
                 return uporabni;
 
             }
-
         }
 
         public static List<Users>IzpisUsers()
@@ -258,6 +257,51 @@ namespace Library
                 com.ExecuteNonQuery();
             }
             con.Close();
+        }
+
+        public static void DodajKnjigo(string naslov, string shop, string section, int leto, string avtor, string zaloznik, string opomba)
+        {
+            SQLiteConnection con = connect();
+            int idOddelka = 0;
+            con.Open();
+            using (SQLiteCommand com = new SQLiteCommand(con))
+            {
+                com.CommandText = "SELECT id FROM sections WHERE name='" + section + "';";
+                SQLiteDataReader read = com.ExecuteReader();
+                while (read.Read())
+                {
+                    idOddelka = read.GetInt32(0);
+                }
+            }
+            con.Close();
+
+            con.Open();
+            using (SQLiteCommand com = new SQLiteCommand(con))
+            {
+                com.CommandText = "INSERT INTO books(title, shop, notes, section_id, year, author, publisher) VALUES('" + naslov + "', '" + shop + "', '" + opomba + "', '" + idOddelka + "', '" + leto + "', '" + avtor + "', '" + zaloznik + "');";
+                com.ExecuteNonQuery();
+            }
+            con.Close();
+        }
+
+        public static List<string> SelectSections()
+        {
+            List<string> sections = new List<string>();
+            SQLiteConnection con = connect();
+            con.Open();
+            using (SQLiteCommand com = new SQLiteCommand(con))
+            {
+                com.CommandText = "SELECT name FROM sections ;";
+                SQLiteDataReader read = com.ExecuteReader();
+                while (read.Read())
+                {
+                    string imeSekcije = read.GetString(0);
+
+                    sections.Add(imeSekcije);
+                }
+            }
+            con.Close();
+            return sections;
         }
     }
 }
