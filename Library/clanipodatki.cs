@@ -87,7 +87,7 @@ namespace Library
 
                 uredibutton.Visible = true;
                 potrdibutton.Visible = false;
-                potrdibutton.Visible = false;
+                cancel_button.Visible = false;
 
             }     
         }

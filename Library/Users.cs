@@ -26,7 +26,9 @@ namespace Library
             address = naslov;
             email = gmail;
             notes = opombe;
+
         }
+
 
 
         public Users(int i, string n,string sn,string tel,string em)
@@ -38,6 +40,11 @@ namespace Library
             email = em;
         }
 
+        public Users(int i, string n, string sn, string tel, string em, string ada, string not) : this(i, n, sn, tel, em)
+        {
+            address = ada;
+            notes = not;
+        }
         public Users(int i, string n, string sn, string tel, string em, string us, string pass, string ada, string not) : this(i, n, sn, tel, em)
         {
             address = ada;

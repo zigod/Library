@@ -47,7 +47,7 @@ namespace Library
         {
             Shop = sh;
             notes = not;
-            Leto = l;
+            Lost = l;
         }
     }
 

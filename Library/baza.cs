@@ -157,18 +157,17 @@ namespace Library
                 SQLiteDataReader read = com.ExecuteReader();
                 read.Read();
 
-
+            
                 string name = read.GetString(1);
                 string surname = read.GetString(2);
                 string telephone = read.GetString(3);
                 string address = read.GetString(4);
                 string email = read.GetString(5);
-                string username = read.GetString(6);
-                string pass = read.GetString(7);
+                
                 string notes = read.GetString(8);
 
 
-                Users uporabnik = new Users(idu, name, surname, telephone, email, username, pass, address, notes);
+                Users uporabnik = new Users(idu, name, surname, telephone, email, address, notes);
 
                 uporabni = uporabnik;
 

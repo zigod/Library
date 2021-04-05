@@ -36,7 +36,7 @@ namespace Library
             List<Users> user = baza.IzpisUsers();
             foreach (knjige x in knjiga)
             {
-                knjigegrid.Rows.Add(new object[] { x.inventarna_st,x.Naslov,x.Avtor,x.Leto,x.Section,x.Zalozba });
+                knjigegrid.Rows.Add(new object[] { x.inventarna_st,x.Naslov,x.Avtor,x.Leto,x.Section,x.Zalozba,"Več"});
             }
 
             foreach (Users x in user)
@@ -76,7 +76,8 @@ namespace Library
 
         private void knjigegrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int id = Convert.ToInt32(usersgrid.Rows[e.RowIndex].Cells[0].Value);
+            int id = Convert.ToInt32(knjigegrid.Rows[e.RowIndex].Cells[0].Value);
+          
             if(e.ColumnIndex == 6)
             {
                 podatkioknjigi pod = new podatkioknjigi(id);

@@ -51,6 +51,9 @@ namespace Library
             this.priimekBox = new System.Windows.Forms.TextBox();
             this.imeBox = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
+            this.zalozbaBox = new System.Windows.Forms.TextBox();
+            this.dodajKnjigoButton = new System.Windows.Forms.Button();
             this.oddelekComboBox = new System.Windows.Forms.ComboBox();
             this.pridobitevComboBox = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -71,9 +74,6 @@ namespace Library
             this.tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ogl = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dodajKnjigoButton = new System.Windows.Forms.Button();
-            this.zalozbaBox = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nasl = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -140,7 +140,7 @@ namespace Library
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1551, 725);
+            this.tabPage2.Size = new System.Drawing.Size(1306, 725);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Dodajanje";
             // 
@@ -340,6 +340,33 @@ namespace Library
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Dodajanje knjig";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(286, 264);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(65, 17);
+            this.label16.TabIndex = 18;
+            this.label16.Text = "Založnik:";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // zalozbaBox
+            // 
+            this.zalozbaBox.Location = new System.Drawing.Point(357, 261);
+            this.zalozbaBox.Name = "zalozbaBox";
+            this.zalozbaBox.Size = new System.Drawing.Size(259, 23);
+            this.zalozbaBox.TabIndex = 17;
+            // 
+            // dodajKnjigoButton
+            // 
+            this.dodajKnjigoButton.Location = new System.Drawing.Point(357, 392);
+            this.dodajKnjigoButton.Name = "dodajKnjigoButton";
+            this.dodajKnjigoButton.Size = new System.Drawing.Size(259, 34);
+            this.dodajKnjigoButton.TabIndex = 16;
+            this.dodajKnjigoButton.Text = "DODAJ";
+            this.dodajKnjigoButton.UseVisualStyleBackColor = true;
+            this.dodajKnjigoButton.Click += new System.EventHandler(this.dodajKnjigoButton_Click);
+            // 
             // oddelekComboBox
             // 
             this.oddelekComboBox.FormattingEnabled = true;
@@ -459,7 +486,7 @@ namespace Library
             this.tabPage3.Controls.Add(this.usersgrid);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1551, 725);
+            this.tabPage3.Size = new System.Drawing.Size(1306, 725);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Člani";
             // 
@@ -507,32 +534,6 @@ namespace Library
             this.ogl.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ogl.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // dodajKnjigoButton
-            // 
-            this.dodajKnjigoButton.Location = new System.Drawing.Point(357, 392);
-            this.dodajKnjigoButton.Name = "dodajKnjigoButton";
-            this.dodajKnjigoButton.Size = new System.Drawing.Size(259, 34);
-            this.dodajKnjigoButton.TabIndex = 16;
-            this.dodajKnjigoButton.Text = "DODAJ";
-            this.dodajKnjigoButton.UseVisualStyleBackColor = true;
-            this.dodajKnjigoButton.Click += new System.EventHandler(this.dodajKnjigoButton_Click);
-            // 
-            // zalozbaBox
-            // 
-            this.zalozbaBox.Location = new System.Drawing.Point(357, 261);
-            this.zalozbaBox.Name = "zalozbaBox";
-            this.zalozbaBox.Size = new System.Drawing.Size(259, 23);
-            this.zalozbaBox.TabIndex = 17;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(286, 264);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(65, 17);
-            this.label16.TabIndex = 18;
-            this.label16.Text = "Založnik:";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // id
             // 
             this.id.HeaderText = "id";
@@ -576,6 +577,7 @@ namespace Library
             // 
             this.oglej.HeaderText = "Oglej več";
             this.oglej.Name = "oglej";
+            this.oglej.Text = "Oglej";
             // 
             // main
             // 
