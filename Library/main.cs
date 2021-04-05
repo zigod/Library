@@ -16,8 +16,18 @@ namespace Library
         {
             InitializeComponent();
             polnjenje();
+            sectionsPolnjenje();
         }
 
+        private void sectionsPolnjenje()
+        {
+            List<string> sections = baza.SelectSections();
+
+            foreach (string x in sections)
+            {
+                oddelekComboBox.Items.Add(x);
+            }
+        }
        
 
         private void polnjenje()
@@ -44,7 +54,11 @@ namespace Library
             string email = gmailBox.Text;
             string opombe = opombeBox.Text;
 
-            baza.DodajClana(ime, priimek, telefon, naslov, email, opombe);
+            Users uporabnik = new Users(ime, priimek, telefon, naslov, email, opombe);
+
+            baza.DodajClana(uporabnik.name, uporabnik.surname, uporabnik.telephone, uporabnik.address, uporabnik.email, uporabnik.notes);
+
+            MessageBox.Show(uporabnik.name +" "+ uporabnik.surname +" "+ uporabnik.telephone +" "+ uporabnik.address +" "+ uporabnik.email +" "+ uporabnik.notes);
         }
 
         private void usersgrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -57,6 +71,21 @@ namespace Library
             {
 
             }
+        }
+
+        private void dodajKnjigoButton_Click(object sender, EventArgs e)
+        {
+            string naslovKnjige = naslovKnjigeTextBox.Text;
+            string nacinPridobitve = pridobitevComboBox.SelectedIndex.ToString();
+            string oddelek = oddelekComboBox.SelectedItem.ToString();
+            int leto = Convert.ToInt32(letoTextbox.Text);
+            string avtor = avtorTextBox.Text;
+            string zalozba = zalozbaBox.Text;
+            string opombe = opombeTextBox.Text;
+
+            knjige knjiga = new knjige(naslovKnjige, nacinPridobitve, oddelek, leto, avtor, zalozba, opombe);
+
+            baza.DodajKnjigo(knjiga.Naslov, knjiga.Shop, knjiga.Section, knjiga.Leto, knjiga.Avtor, knjiga.Zalozba, knjiga.Opomba);
         }
     }
 }

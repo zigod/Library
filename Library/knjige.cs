@@ -14,7 +14,7 @@ namespace Library
         public string Avtor;
         public string Zalozba;
         public string Section;
-
+        public string Opomba;
         public int Status;
 
         public string Shop;
@@ -29,6 +29,17 @@ namespace Library
             Zalozba = z;
             Section = s;
             Status = st;
+        }
+
+        public knjige(string naslov, string shop, string section, int leto, string avtor, string zaloznik, string opomba)
+        {
+            Naslov = naslov;
+            Shop = shop;
+            Section = section;
+            Leto = leto;
+            Avtor = avtor;
+            Zalozba = zaloznik;
+            Opomba = opomba;
         }
 
 

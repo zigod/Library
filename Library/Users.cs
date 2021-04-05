@@ -15,6 +15,7 @@ namespace Library
         public string email;
         public string username;
         public string password;
+        public string notes;
 
 
         public Users(string n,string sn,string tel,string em)
@@ -25,6 +26,15 @@ namespace Library
             email = em;
         }
 
-        public Users(string )
+        public Users(string ime, string priimek, string telefon, string naslov, string gmail, string opombe)
+        {
+            name = ime;
+            surname = priimek;
+            telephone = telefon;
+            address = naslov;
+            email = gmail;
+            notes = opombe;
+        }
+
     }
 }
