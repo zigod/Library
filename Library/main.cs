@@ -41,8 +41,9 @@ namespace Library
 
             foreach (Users x in user)
             {
-                usersgrid.Rows.Add(new object[] { x.name, x.surname, x.telephone, x.email, "Več"});
+                usersgrid.Rows.Add(new object[] { x.name, x.surname, x.telephone, x.email, "Več",x.id});
             }
+            
         }
 
         private void dodajClanaButton_Click(object sender, EventArgs e)
@@ -63,13 +64,23 @@ namespace Library
 
         private void usersgrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string ime = Convert.ToString(usersgrid.Rows[e.RowIndex].Cells[0].Value);
-            string pri = Convert.ToString(usersgrid.Rows[e.RowIndex].Cells[1].Value);
-            string tel = Convert.ToString(usersgrid.Rows[e.RowIndex].Cells[2].Value);
-            string enaslov = Convert.ToString(usersgrid.Rows[e.RowIndex].Cells[3].Value);
+            
+            int id = Convert.ToInt32(usersgrid.Rows[e.RowIndex].Cells[5].Value);
+       
             if (e.ColumnIndex == 4)
             {
+                clanipodatki cp = new clanipodatki(id);
+                cp.Show();
+            }
+        }
 
+        private void knjigegrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = Convert.ToInt32(usersgrid.Rows[e.RowIndex].Cells[0].Value);
+            if(e.ColumnIndex == 6)
+            {
+                podatkioknjigi pod = new podatkioknjigi(id);
+                pod.Show();
             }
         }
 

@@ -41,10 +41,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.nazajbutton = new System.Windows.Forms.Button();
+            this.uredibutton = new System.Windows.Forms.Button();
+            this.potrdibutton = new System.Windows.Forms.Button();
+            this.cancel_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // imetext
             // 
+            this.imetext.Enabled = false;
             this.imetext.Location = new System.Drawing.Point(98, 45);
             this.imetext.Name = "imetext";
             this.imetext.Size = new System.Drawing.Size(400, 20);
@@ -52,6 +56,7 @@
             // 
             // nasltext
             // 
+            this.nasltext.Enabled = false;
             this.nasltext.Location = new System.Drawing.Point(98, 249);
             this.nasltext.Name = "nasltext";
             this.nasltext.Size = new System.Drawing.Size(400, 20);
@@ -59,6 +64,7 @@
             // 
             // teltext
             // 
+            this.teltext.Enabled = false;
             this.teltext.Location = new System.Drawing.Point(98, 187);
             this.teltext.Name = "teltext";
             this.teltext.Size = new System.Drawing.Size(400, 20);
@@ -66,6 +72,7 @@
             // 
             // pritext
             // 
+            this.pritext.Enabled = false;
             this.pritext.Location = new System.Drawing.Point(98, 117);
             this.pritext.Name = "pritext";
             this.pritext.Size = new System.Drawing.Size(400, 20);
@@ -73,6 +80,7 @@
             // 
             // emailtext
             // 
+            this.emailtext.Enabled = false;
             this.emailtext.Location = new System.Drawing.Point(98, 314);
             this.emailtext.Name = "emailtext";
             this.emailtext.Size = new System.Drawing.Size(400, 20);
@@ -80,6 +88,7 @@
             // 
             // opombetext
             // 
+            this.opombetext.Enabled = false;
             this.opombetext.Location = new System.Drawing.Point(98, 391);
             this.opombetext.Name = "opombetext";
             this.opombetext.Size = new System.Drawing.Size(400, 121);
@@ -156,11 +165,46 @@
             this.nazajbutton.UseVisualStyleBackColor = true;
             this.nazajbutton.Click += new System.EventHandler(this.nazajbutton_Click);
             // 
+            // uredibutton
+            // 
+            this.uredibutton.Location = new System.Drawing.Point(576, 27);
+            this.uredibutton.Name = "uredibutton";
+            this.uredibutton.Size = new System.Drawing.Size(131, 54);
+            this.uredibutton.TabIndex = 13;
+            this.uredibutton.Text = "Uredi podatke";
+            this.uredibutton.UseVisualStyleBackColor = true;
+            this.uredibutton.Click += new System.EventHandler(this.uredibutton_Click);
+            // 
+            // potrdibutton
+            // 
+            this.potrdibutton.Location = new System.Drawing.Point(504, 117);
+            this.potrdibutton.Name = "potrdibutton";
+            this.potrdibutton.Size = new System.Drawing.Size(131, 46);
+            this.potrdibutton.TabIndex = 14;
+            this.potrdibutton.Text = "Potrdi spremembe";
+            this.potrdibutton.UseVisualStyleBackColor = true;
+            this.potrdibutton.Visible = false;
+            this.potrdibutton.Click += new System.EventHandler(this.potrdibutton_Click);
+            // 
+            // cancel_button
+            // 
+            this.cancel_button.Location = new System.Drawing.Point(645, 117);
+            this.cancel_button.Name = "cancel_button";
+            this.cancel_button.Size = new System.Drawing.Size(131, 46);
+            this.cancel_button.TabIndex = 15;
+            this.cancel_button.Text = "Prekliči spremembe";
+            this.cancel_button.UseVisualStyleBackColor = true;
+            this.cancel_button.Visible = false;
+            this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
+            // 
             // clanipodatki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 592);
+            this.ClientSize = new System.Drawing.Size(788, 607);
+            this.Controls.Add(this.cancel_button);
+            this.Controls.Add(this.potrdibutton);
+            this.Controls.Add(this.uredibutton);
             this.Controls.Add(this.nazajbutton);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -196,5 +240,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button nazajbutton;
+        private System.Windows.Forms.Button uredibutton;
+        private System.Windows.Forms.Button potrdibutton;
+        private System.Windows.Forms.Button cancel_button;
     }
 }

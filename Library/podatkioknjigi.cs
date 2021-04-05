@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Library
+{
+    public partial class podatkioknjigi : Form
+    {
+        int id;
+        public podatkioknjigi(int idk)
+        {
+            InitializeComponent();
+            id = idk;
+            polnjenje();
+        }
+
+        private void polnjenje()
+        {
+            knjige kn = baza.PodatkiOknjigi(id);
+            invtext.Text = kn.inventarna_st.ToString();
+            nastext.Text = kn.Naslov;
+            avtext.Text = kn.Avtor;
+            zatext.Text = kn.Zalozba;
+            letext.Text = kn.Leto.ToString();
+            odtext.Text = kn.Section;
+            if(kn.Lost == 1)
+            {
+                ja_izgubljena.Checked = true;
+
+            }
+            else
+            {
+                ne_izgubljena.Checked = true;
+            }
+            nacintext.Text = kn.Shop;
+            optext.Text = kn.notes;
+
+
+        }
+    }
+}

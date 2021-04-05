@@ -41,40 +41,145 @@ namespace Library
             }
             return preveritev;
         }
-        /*public static Users IzpisVsePodatkeOUser(string ime, string sur, string tel, string adi)
+      
+        public static knjige PodatkiOknjigi(int idk)
+        {
+            knjige kn;
+            SQLiteConnection con = connect();
+            con.Open();
+
+
+            using (SQLiteCommand com = new SQLiteCommand(con))
+            {
+                com.CommandText = "SELECT k.id,k.title,k.shop,k.notes,s.name,k.year,k.author,k.publisher,k.lost FROM books k INNER JOIN sections s ON s.id = k.section_id WHERE k.id = " + idk + ";";
+                SQLiteDataReader read = com.ExecuteReader();
+                read.Read();
+                int it = read.GetInt32(0);
+                string naslov = read.GetString(1);
+                int shop = read.GetInt32(2);
+                string opombe = read.GetString(3);
+                string section = read.GetString(4);
+                int leto = read.GetInt32(5);
+                string avtor = read.GetString(6);
+                string publisher = read.GetString(7);
+                int lost = read.GetInt32(8);
+
+
+                string nacinpridobitve = "";
+                switch(shop)
+                {
+                    case 0:
+                        nacinpridobitve = "Nakup";
+                        break;
+                    case 1:
+                        nacinpridobitve = "Darilo";
+                        break;
+                    case 2:
+                        nacinpridobitve = "Ostalo";
+                        break;
+
+                }
+                int st = 0;
+                kn = new knjige(nacinpridobitve, opombe, lost, it, naslov, leto, avtor, publisher, section, st);
+
+
+
+
+                com.Dispose();
+                con.Close();
+
+
+
+            }
+            return kn;
+        }
+        public static void UpdateUporabnika(Users user, int idu)
         {
             SQLiteConnection con = connect();
             con.Open();
 
+
             using (SQLiteCommand com = new SQLiteCommand(con))
             {
-                com.CommandText = "SELECT * FROM USERS WHERE name = '" + ime + "' AND surname = '" + sur + "' AND tel = '" + tel + "' AND address = '" + adi + ";'";
-                SQLiteDataReader read = com.ExecuteReader();
-                while (read.Read())
-                {
-
-                    string name = read.GetString(1);
-                    string surname = read.GetString(2);
-                    string telephone = read.GetString(3);
-                    string address = read.GetString(4);
-                    string email = read.GetString(5);
-                    string user = read.GetString(6);
-                    string pass = read.GetString(7);
-                    string notes = read.GetString(8);
+                com.CommandText = "UPDATE users SET name = '" + user.name + "',surname = '" + user.surname + "',tel = '" + user.telephone + "',address = '" + user.address + "',email = '" + user.email + "',notes = '" + user.notes + "' WHERE id = " + idu + ";";
+                com.ExecuteNonQuery();
+               
 
 
-                    Users user = new Users(name, surname, tel, email);
 
-
-                    us.Add(user);
-
-                }
                 com.Dispose();
                 con.Close();
-                return us;
+
+
 
             }
-        }*/
+        }
+        public static bool PreverjanjeUporabnika(string email,string telefon,int idu)
+        {
+            bool ok = true;
+            SQLiteConnection con = connect();
+            con.Open();
+
+
+            using (SQLiteCommand com = new SQLiteCommand(con))
+            {
+                com.CommandText = "SELECT id FROM USERS WHERE tel = '" + telefon + "' OR email = '" + email + "';";
+                SQLiteDataReader read = com.ExecuteReader();
+                read.Read();
+                int id = read.GetInt32(0);
+                if(id > 0 && idu != id)
+                {
+                    ok = false;
+                }
+                
+
+
+
+                com.Dispose();
+                con.Close();
+
+              
+
+            }
+            return ok;
+        }
+        public static Users IzpisVsePodatkeOUser(int idu)
+        {
+
+            Users uporabni;
+            SQLiteConnection con = connect();
+            con.Open();
+
+
+            using (SQLiteCommand com = new SQLiteCommand(con))
+            {
+                com.CommandText = "SELECT * FROM USERS WHERE id = " + idu + ";";
+                SQLiteDataReader read = com.ExecuteReader();
+                read.Read();
+
+
+                string name = read.GetString(1);
+                string surname = read.GetString(2);
+                string telephone = read.GetString(3);
+                string address = read.GetString(4);
+                string email = read.GetString(5);
+                string username = read.GetString(6);
+                string pass = read.GetString(7);
+                string notes = read.GetString(8);
+
+
+                Users uporabnik = new Users(idu, name, surname, telephone, email, username, pass, address, notes);
+
+                uporabni = uporabnik;
+
+
+                com.Dispose();
+                con.Close();
+
+                return uporabni;
+
+            }
+        }
 
         public static List<Users>IzpisUsers()
         {
@@ -84,7 +189,7 @@ namespace Library
 
             using (SQLiteCommand com = new SQLiteCommand(con))
             {
-                com.CommandText = "SELECT name,surname,tel,email FROM users;";
+                com.CommandText = "SELECT name,surname,tel,email,id FROM users;";
                 SQLiteDataReader read = com.ExecuteReader();
                 while (read.Read())
                 {
@@ -93,8 +198,9 @@ namespace Library
                     string surname = read.GetString(1);
                     string tel = read.GetString(2);
                     string email = read.GetString(3);
+                    int id = read.GetInt32(4);
                  
-                    Users user = new Users(name,surname,tel,email);
+                    Users user = new Users(id,name,surname,tel,email);
 
 
                     us.Add(user);

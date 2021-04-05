@@ -18,13 +18,14 @@ namespace Library
         public int Status;
 
         public string Shop;
-        public bool Lost;
+        public int Lost;
+        public string notes;
 
-        public knjige(int id, string n, int l, string a, string z, string s , int st)
+        public knjige(int id, string n, int let, string a, string z, string s , int st)
         {
             inventarna_st = id;
             Naslov = n;
-            Leto = l;
+            Leto = let;
             Avtor = a;
             Zalozba = z;
             Section = s;
@@ -41,8 +42,13 @@ namespace Library
             Zalozba = zaloznik;
             Opomba = opomba;
         }
-
-
+      
+        public knjige(string sh, string not, int l, int id, string n, int let, string a, string z, string s, int st) : this(id,n,let,a,z,s,st)
+        {
+            Shop = sh;
+            notes = not;
+            Leto = l;
+        }
     }
 
 

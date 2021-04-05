@@ -8,6 +8,7 @@ namespace Library
 {
     public class Users
     {
+        public int id;
         public string name;
         public string surname;
         public string telephone;
@@ -17,15 +18,6 @@ namespace Library
         public string password;
         public string notes;
 
-
-        public Users(string n,string sn,string tel,string em)
-        {
-            name = n;
-            surname = sn;
-            telephone = tel;
-            email = em;
-        }
-
         public Users(string ime, string priimek, string telefon, string naslov, string gmail, string opombe)
         {
             name = ime;
@@ -34,6 +26,24 @@ namespace Library
             address = naslov;
             email = gmail;
             notes = opombe;
+        }
+
+
+        public Users(int i, string n,string sn,string tel,string em)
+        {
+            id = i;
+            name = n;
+            surname = sn;
+            telephone = tel;
+            email = em;
+        }
+
+        public Users(int i, string n, string sn, string tel, string em, string us, string pass, string ada, string not) : this(i, n, sn, tel, em)
+        {
+            address = ada;
+            username = us;
+            password = pass;
+            notes = not;
         }
 
     }
