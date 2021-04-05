@@ -32,12 +32,6 @@ namespace Library
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.knjigegrid = new System.Windows.Forms.DataGridView();
-            this.inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nasl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avtor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.let = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.dodajanjeClanovPage = new System.Windows.Forms.TabPage();
@@ -64,6 +58,14 @@ namespace Library
             this.tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ogl = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nasl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.avtor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.let = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oglej = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.knjigegrid)).BeginInit();
@@ -82,7 +84,7 @@ namespace Library
             this.tabControl1.Location = new System.Drawing.Point(3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1015, 620);
+            this.tabControl1.Size = new System.Drawing.Size(1314, 751);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -91,7 +93,7 @@ namespace Library
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1007, 594);
+            this.tabPage1.Size = new System.Drawing.Size(1306, 725);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Izpis";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -106,44 +108,13 @@ namespace Library
             this.avtor,
             this.let,
             this.sec,
-            this.publ});
-            this.knjigegrid.Location = new System.Drawing.Point(-20, 113);
+            this.publ,
+            this.oglej});
+            this.knjigegrid.Location = new System.Drawing.Point(3, 3);
             this.knjigegrid.Name = "knjigegrid";
-            this.knjigegrid.Size = new System.Drawing.Size(1100, 485);
+            this.knjigegrid.Size = new System.Drawing.Size(1277, 485);
             this.knjigegrid.TabIndex = 0;
-            // 
-            // inv
-            // 
-            this.inv.HeaderText = "Inventarna st";
-            this.inv.Name = "inv";
-            // 
-            // nasl
-            // 
-            this.nasl.HeaderText = "Naslov";
-            this.nasl.Name = "nasl";
-            // 
-            // avtor
-            // 
-            this.avtor.HeaderText = "Avtor";
-            this.avtor.Name = "avtor";
-            this.avtor.Width = 250;
-            // 
-            // let
-            // 
-            this.let.HeaderText = "Leto";
-            this.let.Name = "let";
-            // 
-            // sec
-            // 
-            this.sec.HeaderText = "Sections";
-            this.sec.Name = "sec";
-            this.sec.Width = 200;
-            // 
-            // publ
-            // 
-            this.publ.HeaderText = "Publisher";
-            this.publ.Name = "publ";
-            this.publ.Width = 250;
+            this.knjigegrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.knjigegrid_CellContentClick);
             // 
             // tabPage2
             // 
@@ -151,7 +122,7 @@ namespace Library
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1007, 594);
+            this.tabPage2.Size = new System.Drawing.Size(1551, 725);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Dodajanje";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -340,7 +311,7 @@ namespace Library
             this.tabPage3.Controls.Add(this.usersgrid);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1007, 594);
+            this.tabPage3.Size = new System.Drawing.Size(1551, 725);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Člani";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -353,7 +324,8 @@ namespace Library
             this.surname,
             this.tel,
             this.ad,
-            this.ogl});
+            this.ogl,
+            this.id});
             this.usersgrid.Location = new System.Drawing.Point(6, 35);
             this.usersgrid.Name = "usersgrid";
             this.usersgrid.Size = new System.Drawing.Size(1036, 239);
@@ -388,11 +360,55 @@ namespace Library
             this.ogl.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ogl.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
+            // inv
+            // 
+            this.inv.HeaderText = "Inventarna st";
+            this.inv.Name = "inv";
+            // 
+            // nasl
+            // 
+            this.nasl.HeaderText = "Naslov";
+            this.nasl.Name = "nasl";
+            // 
+            // avtor
+            // 
+            this.avtor.HeaderText = "Avtor";
+            this.avtor.Name = "avtor";
+            this.avtor.Width = 250;
+            // 
+            // let
+            // 
+            this.let.HeaderText = "Leto";
+            this.let.Name = "let";
+            // 
+            // sec
+            // 
+            this.sec.HeaderText = "Sections";
+            this.sec.Name = "sec";
+            this.sec.Width = 200;
+            // 
+            // publ
+            // 
+            this.publ.HeaderText = "Publisher";
+            this.publ.Name = "publ";
+            this.publ.Width = 250;
+            // 
+            // oglej
+            // 
+            this.oglej.HeaderText = "Oglej več";
+            this.oglej.Name = "oglej";
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1037, 634);
+            this.ClientSize = new System.Drawing.Size(1646, 753);
             this.Controls.Add(this.tabControl1);
             this.Name = "main";
             this.Text = "Form1";
@@ -415,12 +431,6 @@ namespace Library
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView knjigegrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nasl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn avtor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn let;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sec;
-        private System.Windows.Forms.DataGridViewTextBoxColumn publ;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView usersgrid;
         private System.Windows.Forms.TabControl tabControl2;
@@ -446,6 +456,14 @@ namespace Library
         private System.Windows.Forms.DataGridViewTextBoxColumn tel;
         private System.Windows.Forms.DataGridViewTextBoxColumn ad;
         private System.Windows.Forms.DataGridViewButtonColumn ogl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nasl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn avtor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn let;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn publ;
+        private System.Windows.Forms.DataGridViewButtonColumn oglej;
     }
 }
 
