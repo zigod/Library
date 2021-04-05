@@ -31,7 +31,7 @@ namespace Library
 
             foreach (Users x in user)
             {
-                usersgrid.Rows.Add(new object[] { x.name, x.surname, x.telephone, x.email });
+                usersgrid.Rows.Add(new object[] { x.name, x.surname, x.telephone, x.email, "Več"});
             }
         }
 
@@ -45,6 +45,18 @@ namespace Library
             string opombe = opombeBox.Text;
 
             baza.DodajClana(ime, priimek, telefon, naslov, email, opombe);
+        }
+
+        private void usersgrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string ime = Convert.ToString(usersgrid.Rows[e.RowIndex].Cells[0].Value);
+            string pri = Convert.ToString(usersgrid.Rows[e.RowIndex].Cells[1].Value);
+            string tel = Convert.ToString(usersgrid.Rows[e.RowIndex].Cells[2].Value);
+            string enaslov = Convert.ToString(usersgrid.Rows[e.RowIndex].Cells[3].Value);
+            if (e.ColumnIndex == 4)
+            {
+
+            }
         }
     }
 }
