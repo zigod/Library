@@ -65,10 +65,11 @@ namespace Library
         private void usersgrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            int id = Convert.ToInt32(usersgrid.Rows[e.RowIndex].Cells[5].Value);
+            
        
             if (e.ColumnIndex == 4)
             {
+                int id = Convert.ToInt32(usersgrid.Rows[e.RowIndex].Cells[5].Value);
                 clanipodatki cp = new clanipodatki(id);
                 cp.Show();
             }
@@ -76,10 +77,11 @@ namespace Library
 
         private void knjigegrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int id = Convert.ToInt32(knjigegrid.Rows[e.RowIndex].Cells[0].Value);
+          
           
             if(e.ColumnIndex == 6)
             {
+                int id = Convert.ToInt32(knjigegrid.Rows[e.RowIndex].Cells[0].Value);
                 podatkioknjigi pod = new podatkioknjigi(id);
                 pod.Show();
             }
