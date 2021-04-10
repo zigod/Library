@@ -35,8 +35,16 @@ namespace Library
             List<knjige> knjiga = baza.izpisvsehknjig();
             List<Users> user = baza.IzpisUsers();
             foreach (knjige x in knjiga)
+
             {
-                knjigegrid.Rows.Add(new object[] { x.inventarna_st,x.Naslov,x.Avtor,x.Leto,x.Section,x.Zalozba,"Več"});
+                string stat = "";
+                if (x.Status == 0)
+                    stat = "Izposojeno";
+                else
+                    stat = "Prosto";
+
+                knjigegrid.Rows.Add(new object[] { x.inventarna_st, x.Naslov, x.Avtor, x.Leto, x.Section, x.Zalozba, "Več", stat});
+                
             }
 
             foreach (Users x in user)
@@ -72,6 +80,7 @@ namespace Library
                 int id = Convert.ToInt32(usersgrid.Rows[e.RowIndex].Cells[5].Value);
                 clanipodatki cp = new clanipodatki(id);
                 cp.Show();
+                this.Close();
             }
         }
 
@@ -84,6 +93,7 @@ namespace Library
                 int id = Convert.ToInt32(knjigegrid.Rows[e.RowIndex].Cells[0].Value);
                 podatkioknjigi pod = new podatkioknjigi(id);
                 pod.Show();
+                this.Close();
             }
         }
 

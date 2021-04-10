@@ -43,11 +43,12 @@ namespace Library
             Opomba = opomba;
         }
       
-        public knjige(string sh, string not, int l, int id, string n, int let, string a, string z, string s, int st) : this(id,n,let,a,z,s,st)
+        public knjige(int status,string sh, string not, int l, int id, string n, int let, string a, string z, string s, int st) : this(id,n,let,a,z,s,st)
         {
             Shop = sh;
             notes = not;
             Lost = l;
+            Status = status;
         }
     }
 

@@ -40,14 +40,45 @@ namespace Library
             }
             nacintext.Text = kn.Shop;
             optext.Text = kn.notes;
-
-
+            string stat = "";
+            if (kn.Status == 0)
+            {
+                stat = "Izposojeno";
+                vrnibutton.Visible = true;
+                spremeniStatusButton.Visible = false;
+            }
+            else if(kn.Status == 1)
+            {
+                stat = "Prosto";
+                vrnibutton.Visible = false;
+                spremeniStatusButton.Visible = true;
+            }
+            statlabel.Text = statlabel.Text + " " +  stat;
         }
 
         private void spremeniStatusButton_Click(object sender, EventArgs e)
         {
             spremeniStatus rata = new spremeniStatus(id);
             rata.Show();
+            this.Close();
+        }
+
+        private void vrnibutton_Click(object sender, EventArgs e)
+        {
+            bool ok = baza.VrniKnjigoNouid(id);
+            if(ok)
+                MessageBox.Show("Uspešno vrnjena knjiga");
+            else
+                MessageBox.Show("Napaka pri vrnitvi");
+
+            polnjenje();
+        }
+
+        private void nazajbutton_Click(object sender, EventArgs e)
+        {
+            main ma = new main();
+            ma.Show();
+            this.Close();
         }
     }
 }

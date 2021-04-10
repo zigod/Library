@@ -84,7 +84,7 @@ namespace Library
 
             using (SQLiteCommand com = new SQLiteCommand(con))
             {
-                com.CommandText = "SELECT k.id,k.title,k.shop,k.notes,s.name,k.year,k.author,k.publisher,k.lost FROM books k INNER JOIN sections s ON s.id = k.section_id WHERE k.id = " + idk + ";";
+                com.CommandText = "SELECT k.id,k.title,k.shop,k.notes,s.name,k.year,k.author,k.publisher,k.lost,k.current_state FROM books k INNER JOIN sections s ON s.id = k.section_id WHERE k.id = " + idk + ";";
                 SQLiteDataReader read = com.ExecuteReader();
                 read.Read();
                 int it = read.GetInt32(0);
@@ -96,6 +96,8 @@ namespace Library
                 string avtor = read.GetString(6);
                 string publisher = read.GetString(7);
                 int lost = read.GetInt32(8);
+                int current_state = read.GetInt32(9);
+               
 
 
                 string nacinpridobitve = "";
@@ -113,7 +115,7 @@ namespace Library
 
                 }
                 int st = 0;
-                kn = new knjige(nacinpridobitve, opombe, lost, it, naslov, leto, avtor, publisher, section, st);
+                kn = new knjige(current_state,nacinpridobitve, opombe, lost, it, naslov, leto, avtor, publisher, section, st);
 
 
 
@@ -253,7 +255,7 @@ namespace Library
 
             using (SQLiteCommand com = new SQLiteCommand(con))
             {
-                com.CommandText = "SELECT b.id,b.title,b.year,b.author,b.publisher,s.name FROM books b INNER JOIN sections s ON b.section_id = s.id ORDER BY b.id;";
+                com.CommandText = "SELECT b.id,b.title,b.year,b.author,b.publisher,s.name,b.current_state FROM books b INNER JOIN sections s ON b.section_id = s.id ORDER BY b.id;";
                 SQLiteDataReader read = com.ExecuteReader();
                 while (read.Read())
                 {
@@ -264,7 +266,7 @@ namespace Library
                     string avtor = read.GetString(3);
                     string publisher = read.GetString(4);
                     string section = read.GetString(5);
-                    int state = 0; //read.GetInt32(6);
+                    int state = read.GetInt32(6);
                     knjige knjiga = new knjige(id, naslov, leto, avtor, publisher, section,state);
 
 
@@ -375,8 +377,8 @@ namespace Library
             con.Close();
             return userji;
         }
-
-        public static bool RentABook(int id_u, int id_b)
+        
+        public static bool VrniKnjigoNouid(int id_b)
         {
             DateTime date = DateTime.Now;
             string dejt = date.ToString();
@@ -389,8 +391,10 @@ namespace Library
             {
                 using (SQLiteCommand com = new SQLiteCommand(con))
                 {
-                    com.CommandText = "INSERT INTO rents(user_id, book_id, state, date) VALUES(" + id_u + "," + id_b + ",0,'" + dejt + "');";
+
+                    com.CommandText = "UPDATE rents SET state = 1, date = '" + dejt + "' WHERE book_id = " + id_b + ";";
                     com.ExecuteNonQuery();
+
                     preveritev = true;
                 }
 
@@ -398,6 +402,61 @@ namespace Library
             catch
             {
                 preveritev = false;
+            }
+
+            if (preveritev)
+            {
+                using (SQLiteCommand command = new SQLiteCommand(con))
+                {
+                    command.CommandText = "UPDATE books SET current_state = 1 WHERE id = " + id_b + ";";
+                    command.ExecuteNonQuery();
+
+                    preveritev = true;
+                }
+            }
+            con.Close();
+
+            return preveritev;
+        }
+
+        public static bool RentABook(int id_u, int id_b,int type)
+        {
+            DateTime date = DateTime.Now;
+            string dejt = date.ToString();
+
+            bool preveritev;
+
+            SQLiteConnection con = connect();
+            con.Open();
+            try
+            {
+                using (SQLiteCommand com = new SQLiteCommand(con))
+                {
+                    if (type == 0)
+                        com.CommandText = "INSERT INTO rents(user_id, book_id, state, date) VALUES(" + id_u + "," + id_b + "," + type + ",'" + dejt + "');";
+                    else
+                        com.CommandText = "UPDATE rents SET state = 1, date = '" + dejt + "' WHERE user_id = " + id_u + " AND book_id = " + id_b + ";";
+
+                    com.ExecuteNonQuery();
+                    
+                    preveritev = true;
+                }
+
+            }
+            catch
+            {
+                preveritev = false;
+            }
+
+            if(preveritev)
+            {
+                using (SQLiteCommand command = new SQLiteCommand(con))
+                {
+                    command.CommandText = "UPDATE books SET current_state = " + type + " WHERE id = " + id_b + ";";
+                    command.ExecuteNonQuery();
+
+                    preveritev = true;
+                }
             }
             con.Close();
 

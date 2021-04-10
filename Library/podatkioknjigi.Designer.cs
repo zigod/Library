@@ -48,6 +48,9 @@
             this.ja_izgubljena = new System.Windows.Forms.RadioButton();
             this.ne_izgubljena = new System.Windows.Forms.RadioButton();
             this.spremeniStatusButton = new System.Windows.Forms.Button();
+            this.statlabel = new System.Windows.Forms.Label();
+            this.vrnibutton = new System.Windows.Forms.Button();
+            this.nazajbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // invtext
@@ -216,15 +219,47 @@
             this.spremeniStatusButton.Name = "spremeniStatusButton";
             this.spremeniStatusButton.Size = new System.Drawing.Size(128, 83);
             this.spremeniStatusButton.TabIndex = 20;
-            this.spremeniStatusButton.Text = "Spremeni status";
+            this.spremeniStatusButton.Text = "Knjigo je nekdo sposodil";
             this.spremeniStatusButton.UseVisualStyleBackColor = true;
             this.spremeniStatusButton.Click += new System.EventHandler(this.spremeniStatusButton_Click);
+            // 
+            // statlabel
+            // 
+            this.statlabel.AutoSize = true;
+            this.statlabel.Location = new System.Drawing.Point(619, 429);
+            this.statlabel.Name = "statlabel";
+            this.statlabel.Size = new System.Drawing.Size(43, 13);
+            this.statlabel.TabIndex = 21;
+            this.statlabel.Text = "Status: ";
+            // 
+            // vrnibutton
+            // 
+            this.vrnibutton.Location = new System.Drawing.Point(619, 471);
+            this.vrnibutton.Name = "vrnibutton";
+            this.vrnibutton.Size = new System.Drawing.Size(128, 83);
+            this.vrnibutton.TabIndex = 22;
+            this.vrnibutton.Text = "Knjiga je bila vrnjena";
+            this.vrnibutton.UseVisualStyleBackColor = true;
+            this.vrnibutton.Click += new System.EventHandler(this.vrnibutton_Click);
+            // 
+            // nazajbutton
+            // 
+            this.nazajbutton.Location = new System.Drawing.Point(13, 599);
+            this.nazajbutton.Name = "nazajbutton";
+            this.nazajbutton.Size = new System.Drawing.Size(144, 50);
+            this.nazajbutton.TabIndex = 23;
+            this.nazajbutton.Text = "Nazaj";
+            this.nazajbutton.UseVisualStyleBackColor = true;
+            this.nazajbutton.Click += new System.EventHandler(this.nazajbutton_Click);
             // 
             // podatkioknjigi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 661);
+            this.Controls.Add(this.nazajbutton);
+            this.Controls.Add(this.vrnibutton);
+            this.Controls.Add(this.statlabel);
             this.Controls.Add(this.spremeniStatusButton);
             this.Controls.Add(this.ne_izgubljena);
             this.Controls.Add(this.ja_izgubljena);
@@ -274,5 +309,8 @@
         private System.Windows.Forms.RadioButton ja_izgubljena;
         private System.Windows.Forms.RadioButton ne_izgubljena;
         private System.Windows.Forms.Button spremeniStatusButton;
+        private System.Windows.Forms.Label statlabel;
+        private System.Windows.Forms.Button vrnibutton;
+        private System.Windows.Forms.Button nazajbutton;
     }
 }
