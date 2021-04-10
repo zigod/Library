@@ -91,5 +91,11 @@ namespace Library
 
             }     
         }
+
+        private void izposojaVrnitevButton_Click(object sender, EventArgs e)
+        {
+            knjigaClani vrnitevKnjig = new knjigaClani(idu);
+            vrnitevKnjig.Show();
+        }
     }
 }

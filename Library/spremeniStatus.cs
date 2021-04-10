@@ -42,7 +42,7 @@ namespace Library
             {
                 int id_u = Convert.ToInt32(usersGridView.Rows[e.RowIndex].Cells[5].Value);
 
-                bool neki = baza.RentABook(id_u, id_b);
+                bool neki = baza.RentABook(id_u, id_b, 0);
 
                 if (neki)
                 {

@@ -31,6 +31,7 @@ namespace Library
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.poc = new System.Windows.Forms.Button();
             this.orderbutton = new System.Windows.Forms.Button();
             this.descbutton = new System.Windows.Forms.RadioButton();
             this.ascbutton = new System.Windows.Forms.RadioButton();
@@ -89,7 +90,6 @@ namespace Library
             this.ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ogl = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.poc = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.knjigegrid)).BeginInit();
@@ -130,6 +130,16 @@ namespace Library
             this.tabPage1.Size = new System.Drawing.Size(1306, 725);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Izpis";
+            // 
+            // poc
+            // 
+            this.poc.Location = new System.Drawing.Point(6, 69);
+            this.poc.Name = "poc";
+            this.poc.Size = new System.Drawing.Size(75, 23);
+            this.poc.TabIndex = 8;
+            this.poc.Text = "Pocisti iskanje";
+            this.poc.UseVisualStyleBackColor = true;
+            this.poc.Click += new System.EventHandler(this.poc_Click);
             // 
             // orderbutton
             // 
@@ -630,7 +640,7 @@ namespace Library
             this.id});
             this.usersgrid.Location = new System.Drawing.Point(6, 35);
             this.usersgrid.Name = "usersgrid";
-            this.usersgrid.Size = new System.Drawing.Size(1036, 239);
+            this.usersgrid.Size = new System.Drawing.Size(1058, 239);
             this.usersgrid.TabIndex = 0;
             this.usersgrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersgrid_CellContentClick);
             // 
@@ -667,16 +677,6 @@ namespace Library
             this.id.HeaderText = "id";
             this.id.Name = "id";
             this.id.Visible = false;
-            // 
-            // poc
-            // 
-            this.poc.Location = new System.Drawing.Point(6, 69);
-            this.poc.Name = "poc";
-            this.poc.Size = new System.Drawing.Size(75, 23);
-            this.poc.TabIndex = 8;
-            this.poc.Text = "Pocisti iskanje";
-            this.poc.UseVisualStyleBackColor = true;
-            this.poc.Click += new System.EventHandler(this.poc_Click);
             // 
             // main
             // 

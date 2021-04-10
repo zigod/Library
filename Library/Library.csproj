@@ -72,6 +72,12 @@
     <Compile Include="clanipodatki.Designer.cs">
       <DependentUpon>clanipodatki.cs</DependentUpon>
     </Compile>
+    <Compile Include="knjigaClani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="knjigaClani.Designer.cs">
+      <DependentUpon>knjigaClani.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     <Compile Include="Users.cs" />
     <EmbeddedResource Include="clanipodatki.resx">
       <DependentUpon>clanipodatki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="knjigaClani.resx">
+      <DependentUpon>knjigaClani.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>

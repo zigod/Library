@@ -49,6 +49,14 @@ namespace Library
             notes = not;
             Lost = l;
         }
+
+        public knjige(string naslov, string avtor, int leto, string oddelek)
+        {
+            Naslov = naslov;
+            Avtor = avtor;
+            Leto = leto;
+            Section = oddelek;
+        }
     }
 
 

@@ -64,8 +64,6 @@ namespace Library
 
         private void usersgrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            
        
             if (e.ColumnIndex == 4)
             {

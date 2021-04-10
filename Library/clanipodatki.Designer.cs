@@ -44,6 +44,7 @@
             this.uredibutton = new System.Windows.Forms.Button();
             this.potrdibutton = new System.Windows.Forms.Button();
             this.cancel_button = new System.Windows.Forms.Button();
+            this.izposojaVrnitevButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // imetext
@@ -197,11 +198,22 @@
             this.cancel_button.Visible = false;
             this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
             // 
+            // izposojaVrnitevButton
+            // 
+            this.izposojaVrnitevButton.Location = new System.Drawing.Point(557, 411);
+            this.izposojaVrnitevButton.Name = "izposojaVrnitevButton";
+            this.izposojaVrnitevButton.Size = new System.Drawing.Size(186, 65);
+            this.izposojaVrnitevButton.TabIndex = 16;
+            this.izposojaVrnitevButton.Text = "Izposoja in vrnitev članovih knjih";
+            this.izposojaVrnitevButton.UseVisualStyleBackColor = true;
+            this.izposojaVrnitevButton.Click += new System.EventHandler(this.izposojaVrnitevButton_Click);
+            // 
             // clanipodatki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 607);
+            this.Controls.Add(this.izposojaVrnitevButton);
             this.Controls.Add(this.cancel_button);
             this.Controls.Add(this.potrdibutton);
             this.Controls.Add(this.uredibutton);
@@ -243,5 +255,6 @@
         private System.Windows.Forms.Button uredibutton;
         private System.Windows.Forms.Button potrdibutton;
         private System.Windows.Forms.Button cancel_button;
+        private System.Windows.Forms.Button izposojaVrnitevButton;
     }
 }
