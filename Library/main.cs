@@ -109,5 +109,51 @@ namespace Library
                 knjigegrid.Rows.Add(new object[] { x.inventarna_st, x.Naslov, x.Avtor, x.Leto, x.Section, x.Zalozba, "Več" });
             }
         }
+
+        private void orderbutton_Click(object sender, EventArgs e)
+        {
+            string po = urcombo.SelectedItem.ToString();
+            switch(po)
+            {
+                case "Inventarna st":
+                    po = "inv";
+                    break;
+                case "Naslov":
+                    po = "nasl";
+                    break;
+                case "Avtor":
+                    po = "avtor";
+                    break;
+                case "Leto":
+                    po = "let";
+                    break;
+                case "Sections":
+                    po = "sec";
+                    break;
+                case "Publisher":
+                    po = "publ";
+                    break;
+
+            }
+
+            if(ascbutton.Checked == true)
+            {
+                this.knjigegrid.Sort(this.knjigegrid.Columns[po], ListSortDirection.Ascending);
+
+            }
+            else if (descbutton.Checked == true)
+            {
+                this.knjigegrid.Sort(this.knjigegrid.Columns[po], ListSortDirection.Descending);
+            }
+            else
+            {
+                MessageBox.Show("Ni izbrana smer urejanja");
+            }
+        }
+
+        private void poc_Click(object sender, EventArgs e)
+        {
+            polnjenje();
+        }
     }
 }
