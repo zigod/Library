@@ -47,6 +47,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.ja_izgubljena = new System.Windows.Forms.RadioButton();
             this.ne_izgubljena = new System.Windows.Forms.RadioButton();
+            this.spremeniStatusButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // invtext
@@ -209,11 +210,22 @@
             this.ne_izgubljena.Text = "Ne";
             this.ne_izgubljena.UseVisualStyleBackColor = true;
             // 
+            // spremeniStatusButton
+            // 
+            this.spremeniStatusButton.Location = new System.Drawing.Point(619, 471);
+            this.spremeniStatusButton.Name = "spremeniStatusButton";
+            this.spremeniStatusButton.Size = new System.Drawing.Size(128, 83);
+            this.spremeniStatusButton.TabIndex = 20;
+            this.spremeniStatusButton.Text = "Spremeni status";
+            this.spremeniStatusButton.UseVisualStyleBackColor = true;
+            this.spremeniStatusButton.Click += new System.EventHandler(this.spremeniStatusButton_Click);
+            // 
             // podatkioknjigi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 661);
+            this.Controls.Add(this.spremeniStatusButton);
             this.Controls.Add(this.ne_izgubljena);
             this.Controls.Add(this.ja_izgubljena);
             this.Controls.Add(this.label9);
@@ -261,5 +273,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RadioButton ja_izgubljena;
         private System.Windows.Forms.RadioButton ne_izgubljena;
+        private System.Windows.Forms.Button spremeniStatusButton;
     }
 }

@@ -302,5 +302,73 @@ namespace Library
             con.Close();
             return sections;
         }
+
+        public static bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static List<Users> Search(string text)
+        {
+            text = text.ToLower();
+            List<Users> userji = new List<Users>();
+            SQLiteConnection con = connect();
+            con.Open();
+            using (SQLiteCommand com = new SQLiteCommand(con))
+            {
+                com.CommandText = "SELECT name, surname, tel, email, id FROM users WHERE (LOWER(name) LIKE '%" + text + "%') OR (LOWER(surname) LIKE '%" + text + "%') OR (LOWER(email) LIKE '%" + text + "%');";
+                SQLiteDataReader read = com.ExecuteReader();
+                while (read.Read())
+                {
+                    string ime = read.GetString(0);
+                    string priimek = read.GetString(1);
+                    string telefon = read.GetString(2);
+                    string email = read.GetString(3);
+                    int id = read.GetInt32(4);
+
+                    Users user = new Users(id, ime, priimek, telefon, email);
+
+                    userji.Add(user);
+                }
+            }
+            con.Close();
+            return userji;
+        }
+
+        public static bool RentABook(int id_u, int id_b)
+        {
+            DateTime date = DateTime.Now;
+            string dejt = date.ToString();
+
+            bool preveritev;
+
+            SQLiteConnection con = connect();
+            con.Open();
+            try
+            {
+                using (SQLiteCommand com = new SQLiteCommand(con))
+                {
+                    com.CommandText = "INSERT INTO rents(user_id, book_id, state, date) VALUES(" + id_u + "," + id_b + ",0,'" + dejt + "');";
+                    com.ExecuteNonQuery();
+                    preveritev = true;
+                }
+
+            }
+            catch
+            {
+                preveritev = false;
+            }
+            con.Close();
+
+            return preveritev;
+        }
     }
 }

@@ -53,5 +53,13 @@ namespace Library
             notes = not;
         }
 
+        public Users(string ime, string priimek, string telefon, string gmail)
+        {
+            name = ime;
+            surname = priimek;
+            telephone = telefon;
+            email = gmail;
+        }
+
     }
 }

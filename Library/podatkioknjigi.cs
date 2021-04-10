@@ -43,5 +43,11 @@ namespace Library
 
 
         }
+
+        private void spremeniStatusButton_Click(object sender, EventArgs e)
+        {
+            spremeniStatus rata = new spremeniStatus(id);
+            rata.Show();
+        }
     }
 }
