@@ -44,9 +44,19 @@ namespace Library
                     stat = "Prosto";
 
                 knjigegrid.Rows.Add(new object[] { x.inventarna_st, x.Naslov, x.Avtor, x.Leto, x.Section, x.Zalozba, "Več", stat});
-                
+               
             }
+            
+            for(int i = 0;i<knjigegrid.Rows.Count;i++)
+            {
+                
+                string stat = Convert.ToString(knjigegrid.Rows[i].Cells[7].Value);
+                if (stat == "Izposojeno")
+                    knjigegrid.Rows[i].Cells[7].Style.BackColor = Color.Red;
+                else
+                    knjigegrid.Rows[i].Cells[7].Style.BackColor = Color.Green;
 
+            }
             foreach (Users x in user)
             {
                 usersgrid.Rows.Add(new object[] { x.name, x.surname, x.telephone, x.email, "Več",x.id});
