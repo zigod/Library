@@ -99,5 +99,15 @@ namespace Library
 
             baza.DodajKnjigo(knjiga.Naslov, knjiga.Shop, knjiga.Section, knjiga.Leto, knjiga.Avtor, knjiga.Zalozba, knjiga.Opomba);
         }
+
+        private void searchbutton_Click(object sender, EventArgs e)
+        {
+            List<knjige> search = baza.SearchKnjig(searchbar.Text.ToString());
+            knjigegrid.Rows.Clear();
+            foreach (knjige x in search)
+            {
+                knjigegrid.Rows.Add(new object[] { x.inventarna_st, x.Naslov, x.Avtor, x.Leto, x.Section, x.Zalozba, "Več" });
+            }
+        }
     }
 }

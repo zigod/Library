@@ -32,6 +32,13 @@ namespace Library
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.knjigegrid = new System.Windows.Forms.DataGridView();
+            this.inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nasl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.avtor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.let = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oglej = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dodajanjeTab = new System.Windows.Forms.TabControl();
             this.dodajanjeClanovPage = new System.Windows.Forms.TabPage();
@@ -75,13 +82,8 @@ namespace Library
             this.ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ogl = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nasl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avtor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.let = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oglej = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.searchbar = new System.Windows.Forms.TextBox();
+            this.searchbutton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.knjigegrid)).BeginInit();
@@ -107,6 +109,8 @@ namespace Library
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Bisque;
+            this.tabPage1.Controls.Add(this.searchbutton);
+            this.tabPage1.Controls.Add(this.searchbar);
             this.tabPage1.Controls.Add(this.knjigegrid);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -127,11 +131,50 @@ namespace Library
             this.sec,
             this.publ,
             this.oglej});
-            this.knjigegrid.Location = new System.Drawing.Point(3, 3);
+            this.knjigegrid.Location = new System.Drawing.Point(0, 74);
             this.knjigegrid.Name = "knjigegrid";
-            this.knjigegrid.Size = new System.Drawing.Size(1277, 485);
+            this.knjigegrid.Size = new System.Drawing.Size(1303, 485);
             this.knjigegrid.TabIndex = 0;
             this.knjigegrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.knjigegrid_CellContentClick);
+            // 
+            // inv
+            // 
+            this.inv.HeaderText = "Inventarna st";
+            this.inv.Name = "inv";
+            // 
+            // nasl
+            // 
+            this.nasl.HeaderText = "Naslov";
+            this.nasl.Name = "nasl";
+            // 
+            // avtor
+            // 
+            this.avtor.HeaderText = "Avtor";
+            this.avtor.Name = "avtor";
+            this.avtor.Width = 250;
+            // 
+            // let
+            // 
+            this.let.HeaderText = "Leto";
+            this.let.Name = "let";
+            // 
+            // sec
+            // 
+            this.sec.HeaderText = "Sections";
+            this.sec.Name = "sec";
+            this.sec.Width = 200;
+            // 
+            // publ
+            // 
+            this.publ.HeaderText = "Publisher";
+            this.publ.Name = "publ";
+            this.publ.Width = 250;
+            // 
+            // oglej
+            // 
+            this.oglej.HeaderText = "Oglej več";
+            this.oglej.Name = "oglej";
+            this.oglej.Text = "Oglej";
             // 
             // tabPage2
             // 
@@ -540,44 +583,22 @@ namespace Library
             this.id.Name = "id";
             this.id.Visible = false;
             // 
-            // inv
+            // searchbar
             // 
-            this.inv.HeaderText = "Inventarna st";
-            this.inv.Name = "inv";
+            this.searchbar.Location = new System.Drawing.Point(355, 32);
+            this.searchbar.Name = "searchbar";
+            this.searchbar.Size = new System.Drawing.Size(342, 20);
+            this.searchbar.TabIndex = 1;
             // 
-            // nasl
+            // searchbutton
             // 
-            this.nasl.HeaderText = "Naslov";
-            this.nasl.Name = "nasl";
-            // 
-            // avtor
-            // 
-            this.avtor.HeaderText = "Avtor";
-            this.avtor.Name = "avtor";
-            this.avtor.Width = 250;
-            // 
-            // let
-            // 
-            this.let.HeaderText = "Leto";
-            this.let.Name = "let";
-            // 
-            // sec
-            // 
-            this.sec.HeaderText = "Sections";
-            this.sec.Name = "sec";
-            this.sec.Width = 200;
-            // 
-            // publ
-            // 
-            this.publ.HeaderText = "Publisher";
-            this.publ.Name = "publ";
-            this.publ.Width = 250;
-            // 
-            // oglej
-            // 
-            this.oglej.HeaderText = "Oglej več";
-            this.oglej.Name = "oglej";
-            this.oglej.Text = "Oglej";
+            this.searchbutton.Location = new System.Drawing.Point(703, 32);
+            this.searchbutton.Name = "searchbutton";
+            this.searchbutton.Size = new System.Drawing.Size(58, 20);
+            this.searchbutton.TabIndex = 2;
+            this.searchbutton.Text = "isci";
+            this.searchbutton.UseVisualStyleBackColor = true;
+            this.searchbutton.Click += new System.EventHandler(this.searchbutton_Click);
             // 
             // main
             // 
@@ -589,6 +610,7 @@ namespace Library
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.knjigegrid)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.dodajanjeTab.ResumeLayout(false);
@@ -657,6 +679,8 @@ namespace Library
         private System.Windows.Forms.DataGridViewTextBoxColumn sec;
         private System.Windows.Forms.DataGridViewTextBoxColumn publ;
         private System.Windows.Forms.DataGridViewButtonColumn oglej;
+        private System.Windows.Forms.Button searchbutton;
+        private System.Windows.Forms.TextBox searchbar;
     }
 }
 
