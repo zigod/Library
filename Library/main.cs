@@ -65,10 +65,11 @@ namespace Library
         private void usersgrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            int id = Convert.ToInt32(usersgrid.Rows[e.RowIndex].Cells[5].Value);
+            
        
             if (e.ColumnIndex == 4)
             {
+                int id = Convert.ToInt32(usersgrid.Rows[e.RowIndex].Cells[5].Value);
                 clanipodatki cp = new clanipodatki(id);
                 cp.Show();
             }
@@ -76,10 +77,11 @@ namespace Library
 
         private void knjigegrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int id = Convert.ToInt32(knjigegrid.Rows[e.RowIndex].Cells[0].Value);
+          
           
             if(e.ColumnIndex == 6)
             {
+                int id = Convert.ToInt32(knjigegrid.Rows[e.RowIndex].Cells[0].Value);
                 podatkioknjigi pod = new podatkioknjigi(id);
                 pod.Show();
             }
@@ -98,6 +100,62 @@ namespace Library
             knjige knjiga = new knjige(naslovKnjige, nacinPridobitve, oddelek, leto, avtor, zalozba, opombe);
 
             baza.DodajKnjigo(knjiga.Naslov, knjiga.Shop, knjiga.Section, knjiga.Leto, knjiga.Avtor, knjiga.Zalozba, knjiga.Opomba);
+        }
+
+        private void searchbutton_Click(object sender, EventArgs e)
+        {
+            List<knjige> search = baza.SearchKnjig(searchbar.Text.ToString());
+            knjigegrid.Rows.Clear();
+            foreach (knjige x in search)
+            {
+                knjigegrid.Rows.Add(new object[] { x.inventarna_st, x.Naslov, x.Avtor, x.Leto, x.Section, x.Zalozba, "Več" });
+            }
+        }
+
+        private void orderbutton_Click(object sender, EventArgs e)
+        {
+            string po = urcombo.SelectedItem.ToString();
+            switch(po)
+            {
+                case "Inventarna st":
+                    po = "inv";
+                    break;
+                case "Naslov":
+                    po = "nasl";
+                    break;
+                case "Avtor":
+                    po = "avtor";
+                    break;
+                case "Leto":
+                    po = "let";
+                    break;
+                case "Sections":
+                    po = "sec";
+                    break;
+                case "Publisher":
+                    po = "publ";
+                    break;
+
+            }
+
+            if(ascbutton.Checked == true)
+            {
+                this.knjigegrid.Sort(this.knjigegrid.Columns[po], ListSortDirection.Ascending);
+
+            }
+            else if (descbutton.Checked == true)
+            {
+                this.knjigegrid.Sort(this.knjigegrid.Columns[po], ListSortDirection.Descending);
+            }
+            else
+            {
+                MessageBox.Show("Ni izbrana smer urejanja");
+            }
+        }
+
+        private void poc_Click(object sender, EventArgs e)
+        {
+            polnjenje();
         }
     }
 }
