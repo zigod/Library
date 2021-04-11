@@ -526,5 +526,23 @@ namespace Library
             con.Close();
             return knjige;
         }
+
+        public static int frekvenca(string zac, string kon)
+        {
+            int frek = 0;
+            SQLiteConnection con = connect();
+            con.Open();
+            using (SQLiteCommand com = new SQLiteCommand(con))
+            {
+                com.CommandText = "SELECT count(*) FROM rents WHERE date BETWEEN '" + zac + "' AND '" + kon + "';";
+                SQLiteDataReader read = com.ExecuteReader();
+                read.Read();
+                frek = read.GetInt32(0);
+
+
+            }
+            con.Close();
+            return frek;
+        }
     }
 }

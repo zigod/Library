@@ -94,6 +94,7 @@ namespace Library
             this.izpobutton = new System.Windows.Forms.Button();
             this.prostbutton = new System.Windows.Forms.Button();
             this.allizpis = new System.Windows.Forms.Button();
+            this.statistika = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.knjigegrid)).BeginInit();
@@ -119,6 +120,7 @@ namespace Library
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Bisque;
+            this.tabPage1.Controls.Add(this.statistika);
             this.tabPage1.Controls.Add(this.allizpis);
             this.tabPage1.Controls.Add(this.prostbutton);
             this.tabPage1.Controls.Add(this.izpobutton);
@@ -721,6 +723,16 @@ namespace Library
             this.allizpis.UseVisualStyleBackColor = true;
             this.allizpis.Click += new System.EventHandler(this.allizpis_Click);
             // 
+            // statistika
+            // 
+            this.statistika.Location = new System.Drawing.Point(416, 61);
+            this.statistika.Name = "statistika";
+            this.statistika.Size = new System.Drawing.Size(284, 38);
+            this.statistika.TabIndex = 12;
+            this.statistika.Text = "Statistika";
+            this.statistika.UseVisualStyleBackColor = true;
+            this.statistika.Click += new System.EventHandler(this.statistika_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -812,6 +824,7 @@ namespace Library
         private System.Windows.Forms.Button izpobutton;
         private System.Windows.Forms.Button prostbutton;
         private System.Windows.Forms.Button allizpis;
+        private System.Windows.Forms.Button statistika;
     }
 }
 

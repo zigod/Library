@@ -239,5 +239,11 @@ namespace Library
         {
             polnjenje();
         }
+
+        private void statistika_Click(object sender, EventArgs e)
+        {
+            statistika sta = new statistika();
+            sta.Show();
+        }
     }
 }
