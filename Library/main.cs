@@ -35,10 +35,28 @@ namespace Library
             List<knjige> knjiga = baza.izpisvsehknjig();
             List<Users> user = baza.IzpisUsers();
             foreach (knjige x in knjiga)
-            {
-                knjigegrid.Rows.Add(new object[] { x.inventarna_st,x.Naslov,x.Avtor,x.Leto,x.Section,x.Zalozba,"Več"});
-            }
 
+            {
+                string stat = "";
+                if (x.Status == 0)
+                    stat = "Izposojeno";
+                else
+                    stat = "Prosto";
+
+                knjigegrid.Rows.Add(new object[] { x.inventarna_st, x.Naslov, x.Avtor, x.Leto, x.Section, x.Zalozba, "Več", stat});
+               
+            }
+            
+            for(int i = 0;i<knjigegrid.Rows.Count;i++)
+            {
+                
+                string stat = Convert.ToString(knjigegrid.Rows[i].Cells[7].Value);
+                if (stat == "Izposojeno")
+                    knjigegrid.Rows[i].Cells[7].Style.BackColor = Color.Red;
+                else
+                    knjigegrid.Rows[i].Cells[7].Style.BackColor = Color.Green;
+
+            }
             foreach (Users x in user)
             {
                 usersgrid.Rows.Add(new object[] { x.name, x.surname, x.telephone, x.email, "Več",x.id});
@@ -70,6 +88,7 @@ namespace Library
                 int id = Convert.ToInt32(usersgrid.Rows[e.RowIndex].Cells[5].Value);
                 clanipodatki cp = new clanipodatki(id);
                 cp.Show();
+                this.Close();
             }
         }
 
@@ -82,6 +101,7 @@ namespace Library
                 int id = Convert.ToInt32(knjigegrid.Rows[e.RowIndex].Cells[0].Value);
                 podatkioknjigi pod = new podatkioknjigi(id);
                 pod.Show();
+                this.Close();
             }
         }
 

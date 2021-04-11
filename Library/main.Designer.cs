@@ -40,13 +40,6 @@ namespace Library
             this.searchbutton = new System.Windows.Forms.Button();
             this.searchbar = new System.Windows.Forms.TextBox();
             this.knjigegrid = new System.Windows.Forms.DataGridView();
-            this.inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nasl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avtor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.let = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oglej = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dodajanjeTab = new System.Windows.Forms.TabControl();
             this.dodajanjeClanovPage = new System.Windows.Forms.TabPage();
@@ -90,6 +83,16 @@ namespace Library
             this.ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ogl = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
+            this.inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nasl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.avtor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.let = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oglej = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.knjigegrid)).BeginInit();
@@ -225,51 +228,13 @@ namespace Library
             this.let,
             this.sec,
             this.publ,
-            this.oglej});
+            this.oglej,
+            this.status});
             this.knjigegrid.Location = new System.Drawing.Point(0, 138);
             this.knjigegrid.Name = "knjigegrid";
             this.knjigegrid.Size = new System.Drawing.Size(1303, 485);
             this.knjigegrid.TabIndex = 0;
             this.knjigegrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.knjigegrid_CellContentClick);
-            // 
-            // inv
-            // 
-            this.inv.HeaderText = "Inventarna st";
-            this.inv.Name = "inv";
-            // 
-            // nasl
-            // 
-            this.nasl.HeaderText = "Naslov";
-            this.nasl.Name = "nasl";
-            // 
-            // avtor
-            // 
-            this.avtor.HeaderText = "Avtor";
-            this.avtor.Name = "avtor";
-            this.avtor.Width = 250;
-            // 
-            // let
-            // 
-            this.let.HeaderText = "Leto";
-            this.let.Name = "let";
-            // 
-            // sec
-            // 
-            this.sec.HeaderText = "Sections";
-            this.sec.Name = "sec";
-            this.sec.Width = 200;
-            // 
-            // publ
-            // 
-            this.publ.HeaderText = "Publisher";
-            this.publ.Name = "publ";
-            this.publ.Width = 250;
-            // 
-            // oglej
-            // 
-            this.oglej.HeaderText = "Oglej več";
-            this.oglej.Name = "oglej";
-            this.oglej.Text = "Oglej";
             // 
             // tabPage2
             // 
@@ -678,6 +643,52 @@ namespace Library
             this.id.Name = "id";
             this.id.Visible = false;
             // 
+
+            // inv
+            // 
+            this.inv.HeaderText = "Inventarna st";
+            this.inv.Name = "inv";
+            // 
+            // nasl
+            // 
+            this.nasl.HeaderText = "Naslov";
+            this.nasl.Name = "nasl";
+            // 
+            // avtor
+            // 
+            this.avtor.HeaderText = "Avtor";
+            this.avtor.Name = "avtor";
+            this.avtor.Width = 250;
+            // 
+            // let
+            // 
+            this.let.HeaderText = "Leto";
+            this.let.Name = "let";
+            // 
+            // sec
+            // 
+            this.sec.HeaderText = "Sections";
+            this.sec.Name = "sec";
+            this.sec.Width = 200;
+            // 
+            // publ
+            // 
+            this.publ.HeaderText = "Publisher";
+            this.publ.Name = "publ";
+            this.publ.Width = 250;
+            // 
+            // oglej
+            // 
+            this.oglej.HeaderText = "Oglej več";
+            this.oglej.Name = "oglej";
+            this.oglej.Text = "Oglej";
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            // 
+          
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -750,13 +761,6 @@ namespace Library
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox zalozbaBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nasl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn avtor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn let;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sec;
-        private System.Windows.Forms.DataGridViewTextBoxColumn publ;
-        private System.Windows.Forms.DataGridViewButtonColumn oglej;
         private System.Windows.Forms.Button searchbutton;
         private System.Windows.Forms.TextBox searchbar;
         private System.Windows.Forms.Button orderbutton;
@@ -765,6 +769,14 @@ namespace Library
         private System.Windows.Forms.ComboBox urcombo;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button poc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nasl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn avtor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn let;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn publ;
+        private System.Windows.Forms.DataGridViewButtonColumn oglej;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }
 }
 
