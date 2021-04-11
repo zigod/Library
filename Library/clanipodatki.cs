@@ -30,6 +30,15 @@ namespace Library
             emailtext.Text = uporabnik.email;
             opombetext.Text = uporabnik.notes;
 
+
+                List<knjige> knjiga = baza.IzpisIzposojenih(idu);
+                foreach (knjige x in knjiga)
+                {
+                    vrnitevGrid.Rows.Add(new object[] { x.inventarna_st, x.Naslov, x.Avtor, x.Leto, x.Section, x.Zalozba, "Več" });
+                }
+
+            
+
         }
         private void nazajbutton_Click(object sender, EventArgs e)
         {
@@ -92,10 +101,6 @@ namespace Library
             }     
         }
 
-        private void izposojaVrnitevButton_Click(object sender, EventArgs e)
-        {
-            knjigaClani vrnitevKnjig = new knjigaClani(idu);
-            vrnitevKnjig.Show();
-        }
+  
     }
 }

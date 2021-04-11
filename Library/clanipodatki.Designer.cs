@@ -44,7 +44,13 @@
             this.uredibutton = new System.Windows.Forms.Button();
             this.potrdibutton = new System.Windows.Forms.Button();
             this.cancel_button = new System.Windows.Forms.Button();
-            this.izposojaVrnitevButton = new System.Windows.Forms.Button();
+            this.vrnitevGrid = new System.Windows.Forms.DataGridView();
+            this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Avtor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.leto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oddelek = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vrni = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.vrnitevGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // imetext
@@ -198,22 +204,52 @@
             this.cancel_button.Visible = false;
             this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
             // 
-            // izposojaVrnitevButton
+            // vrnitevGrid
             // 
-            this.izposojaVrnitevButton.Location = new System.Drawing.Point(557, 411);
-            this.izposojaVrnitevButton.Name = "izposojaVrnitevButton";
-            this.izposojaVrnitevButton.Size = new System.Drawing.Size(186, 65);
-            this.izposojaVrnitevButton.TabIndex = 16;
-            this.izposojaVrnitevButton.Text = "Izposoja in vrnitev članovih knjih";
-            this.izposojaVrnitevButton.UseVisualStyleBackColor = true;
-            this.izposojaVrnitevButton.Click += new System.EventHandler(this.izposojaVrnitevButton_Click);
+            this.vrnitevGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vrnitevGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.title,
+            this.Avtor,
+            this.leto,
+            this.oddelek,
+            this.vrni});
+            this.vrnitevGrid.Location = new System.Drawing.Point(98, 600);
+            this.vrnitevGrid.Name = "vrnitevGrid";
+            this.vrnitevGrid.Size = new System.Drawing.Size(645, 208);
+            this.vrnitevGrid.TabIndex = 17;
+            // 
+            // title
+            // 
+            this.title.HeaderText = "Naslov";
+            this.title.Name = "title";
+            // 
+            // Avtor
+            // 
+            this.Avtor.HeaderText = "Avtor";
+            this.Avtor.Name = "Avtor";
+            // 
+            // leto
+            // 
+            this.leto.HeaderText = "Leto";
+            this.leto.Name = "leto";
+            // 
+            // oddelek
+            // 
+            this.oddelek.HeaderText = "Oddelek";
+            this.oddelek.Name = "oddelek";
+            // 
+            // vrni
+            // 
+            this.vrni.HeaderText = "Vrnitev knjig";
+            this.vrni.Name = "vrni";
+            this.vrni.Width = 200;
             // 
             // clanipodatki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 607);
-            this.Controls.Add(this.izposojaVrnitevButton);
+            this.ClientSize = new System.Drawing.Size(788, 916);
+            this.Controls.Add(this.vrnitevGrid);
             this.Controls.Add(this.cancel_button);
             this.Controls.Add(this.potrdibutton);
             this.Controls.Add(this.uredibutton);
@@ -232,6 +268,7 @@
             this.Controls.Add(this.imetext);
             this.Name = "clanipodatki";
             this.Text = "clanipodatki";
+            ((System.ComponentModel.ISupportInitialize)(this.vrnitevGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,6 +292,11 @@
         private System.Windows.Forms.Button uredibutton;
         private System.Windows.Forms.Button potrdibutton;
         private System.Windows.Forms.Button cancel_button;
-        private System.Windows.Forms.Button izposojaVrnitevButton;
+        private System.Windows.Forms.DataGridView vrnitevGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Avtor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn leto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oddelek;
+        private System.Windows.Forms.DataGridViewButtonColumn vrni;
     }
 }
