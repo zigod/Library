@@ -245,5 +245,12 @@ namespace Library
             statistika sta = new statistika();
             sta.Show();
         }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            login log = new login();
+            log.Show();
+            this.Close();
+        }
     }
 }

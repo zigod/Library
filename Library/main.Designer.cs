@@ -95,6 +95,7 @@ namespace Library
             this.prostbutton = new System.Windows.Forms.Button();
             this.allizpis = new System.Windows.Forms.Button();
             this.statistika = new System.Windows.Forms.Button();
+            this.logout = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.knjigegrid)).BeginInit();
@@ -733,11 +734,22 @@ namespace Library
             this.statistika.UseVisualStyleBackColor = true;
             this.statistika.Click += new System.EventHandler(this.statistika_Click);
             // 
+            // logout
+            // 
+            this.logout.Location = new System.Drawing.Point(1346, 24);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(165, 43);
+            this.logout.TabIndex = 1;
+            this.logout.Text = "Odjava";
+            this.logout.UseVisualStyleBackColor = true;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1646, 753);
+            this.Controls.Add(this.logout);
             this.Controls.Add(this.tabControl1);
             this.Name = "main";
             this.Text = "Form1";
@@ -825,6 +837,7 @@ namespace Library
         private System.Windows.Forms.Button prostbutton;
         private System.Windows.Forms.Button allizpis;
         private System.Windows.Forms.Button statistika;
+        private System.Windows.Forms.Button logout;
     }
 }
 
