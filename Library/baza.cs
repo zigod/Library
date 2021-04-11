@@ -419,7 +419,9 @@ namespace Library
             return preveritev;
         }
 
-        public static bool RentABook(int id_u, int id_b,int type)
+
+        public static bool RentABook(int id_u, int id_b, int type)
+
         {
             DateTime date = DateTime.Now;
             string dejt = date.ToString();
@@ -438,7 +440,7 @@ namespace Library
                         com.CommandText = "UPDATE rents SET state = 1, date = '" + dejt + "' WHERE user_id = " + id_u + " AND book_id = " + id_b + ";";
 
                     com.ExecuteNonQuery();
-                    
+
                     preveritev = true;
                 }
 
@@ -448,7 +450,8 @@ namespace Library
                 preveritev = false;
             }
 
-            if(preveritev)
+
+            if (preveritev)
             {
                 using (SQLiteCommand command = new SQLiteCommand(con))
                 {
@@ -461,6 +464,31 @@ namespace Library
             con.Close();
 
             return preveritev;
+        }
+
+        public static List<knjige> IzpisIzposojenih(int id_u)
+        {
+            List<knjige> knjige = new List<knjige>();
+            SQLiteConnection con = connect();
+            con.Open();
+            using (SQLiteCommand com = new SQLiteCommand(con))
+            {
+                com.CommandText = "SELECT b.title, b.author, b.year, s.name FROM books b INNER JOIN sections s ON s.id=b.section_id INNER JOIN rents r ON r.book_id=b.id  WHERE (b.current_state=0) AND (r.user_id='" + id_u + "');";
+                SQLiteDataReader read = com.ExecuteReader();
+                while (read.Read())
+                {
+                    string naslov = read.GetString(0);
+                    string avtor = read.GetString(1);
+                    int leto = read.GetInt32(2);
+                    string oddelek = read.GetString(3);
+
+                    knjige knjiga = new knjige(naslov, avtor, leto, oddelek);
+
+                    knjige.Add(knjiga);
+                }
+            }
+            con.Close();
+            return knjige;
         }
     }
 }

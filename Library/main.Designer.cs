@@ -83,6 +83,7 @@ namespace Library
             this.ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ogl = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
             this.inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nasl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.avtor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,6 +92,7 @@ namespace Library
             this.publ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oglej = new System.Windows.Forms.DataGridViewButtonColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.knjigegrid)).BeginInit();
@@ -603,7 +605,7 @@ namespace Library
             this.id});
             this.usersgrid.Location = new System.Drawing.Point(6, 35);
             this.usersgrid.Name = "usersgrid";
-            this.usersgrid.Size = new System.Drawing.Size(1036, 239);
+            this.usersgrid.Size = new System.Drawing.Size(1058, 239);
             this.usersgrid.TabIndex = 0;
             this.usersgrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersgrid_CellContentClick);
             // 
@@ -641,6 +643,7 @@ namespace Library
             this.id.Name = "id";
             this.id.Visible = false;
             // 
+
             // inv
             // 
             this.inv.HeaderText = "Inventarna st";
@@ -685,6 +688,7 @@ namespace Library
             this.status.HeaderText = "Status";
             this.status.Name = "status";
             // 
+          
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
