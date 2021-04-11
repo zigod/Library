@@ -331,6 +331,17 @@ namespace Library
             polnjenje();
         }
 
+        private void statistika_Click(object sender, EventArgs e)
+        {
+            statistika sta = new statistika();
+            sta.Show();
+        }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            login log = new login();
+            log.Show();
+            this.Close();
         Excel.Application oXL;
         Excel._Workbook oWB;
         Excel._Worksheet oSheet;

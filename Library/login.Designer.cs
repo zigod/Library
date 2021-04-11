@@ -70,6 +70,7 @@
             // 
             this.gesloBox.Location = new System.Drawing.Point(256, 223);
             this.gesloBox.Name = "gesloBox";
+            this.gesloBox.PasswordChar = '*';
             this.gesloBox.Size = new System.Drawing.Size(214, 20);
             this.gesloBox.TabIndex = 10;
             // 

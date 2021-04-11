@@ -86,6 +86,11 @@ namespace Library
             this.ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ogl = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.izpobutton = new System.Windows.Forms.Button();
+            this.prostbutton = new System.Windows.Forms.Button();
+            this.allizpis = new System.Windows.Forms.Button();
+            this.statistika = new System.Windows.Forms.Button();
+            this.logout = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.izvozIme = new System.Windows.Forms.TextBox();
             this.izvozButton = new System.Windows.Forms.Button();
@@ -122,6 +127,7 @@ namespace Library
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Bisque;
+            this.tabPage1.Controls.Add(this.statistika);
             this.tabPage1.Controls.Add(this.izvozButton);
             this.tabPage1.Controls.Add(this.izvozIme);
             this.tabPage1.Controls.Add(this.label18);
@@ -770,10 +776,32 @@ namespace Library
             this.status.HeaderText = "Status";
             this.status.Name = "status";
             // 
+            // statistika
+            // 
+            this.statistika.Location = new System.Drawing.Point(416, 61);
+            this.statistika.Name = "statistika";
+            this.statistika.Size = new System.Drawing.Size(284, 38);
+            this.statistika.TabIndex = 12;
+            this.statistika.Text = "Statistika";
+            this.statistika.UseVisualStyleBackColor = true;
+            this.statistika.Click += new System.EventHandler(this.statistika_Click);
+            // 
+            // logout
+            // 
+            this.logout.Location = new System.Drawing.Point(1346, 24);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(165, 43);
+            this.logout.TabIndex = 1;
+            this.logout.Text = "Odjava";
+            this.logout.UseVisualStyleBackColor = true;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1646, 753);
+            this.Controls.Add(this.logout);
             this.ClientSize = new System.Drawing.Size(1265, 753);
             this.Controls.Add(this.tabControl1);
             this.Name = "main";
@@ -864,6 +892,11 @@ namespace Library
         private System.Windows.Forms.DataGridViewTextBoxColumn publ;
         private System.Windows.Forms.DataGridViewButtonColumn oglej;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.Button izpobutton;
+        private System.Windows.Forms.Button prostbutton;
+        private System.Windows.Forms.Button allizpis;
+        private System.Windows.Forms.Button statistika;
+        private System.Windows.Forms.Button logout;
     }
 }
 
