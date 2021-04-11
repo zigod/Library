@@ -105,6 +105,12 @@
     <Compile Include="spremeniStatus.Designer.cs">
       <DependentUpon>spremeniStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="statistika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="statistika.Designer.cs">
+      <DependentUpon>statistika.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users.cs" />
     <EmbeddedResource Include="clandodajknjigo.resx">
       <DependentUpon>clandodajknjigo.cs</DependentUpon>

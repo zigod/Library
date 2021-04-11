@@ -175,5 +175,69 @@ namespace Library
         {
             polnjenje();
         }
+
+        private void izpobutton_Click(object sender, EventArgs e)
+        {
+            knjigegrid.Rows.Clear();
+            List<knjige> kn = baza.IzpisKnjigNaVoljo(0);
+            foreach (knjige x in kn)
+
+            {
+                string stat = "";
+                if (x.Status == 0)
+                    stat = "Izposojeno";
+                else
+                    stat = "Prosto";
+
+                knjigegrid.Rows.Add(new object[] { x.inventarna_st, x.Naslov, x.Avtor, x.Leto, x.Section, x.Zalozba, "Več", stat });
+
+            }
+
+            for (int i = 0; i < knjigegrid.Rows.Count; i++)
+            {
+
+                string stat = Convert.ToString(knjigegrid.Rows[i].Cells[7].Value);
+                if (stat == "Izposojeno")
+                    knjigegrid.Rows[i].Cells[7].Style.BackColor = Color.Red;
+                else
+                    knjigegrid.Rows[i].Cells[7].Style.BackColor = Color.Green;
+
+            }
+
+        }
+
+        private void prostbutton_Click(object sender, EventArgs e)
+        {
+            knjigegrid.Rows.Clear();
+            List<knjige> kn = baza.IzpisKnjigNaVoljo(1);
+            foreach (knjige x in kn)
+
+            {
+                string stat = "";
+                if (x.Status == 0)
+                    stat = "Izposojeno";
+                else
+                    stat = "Prosto";
+
+                knjigegrid.Rows.Add(new object[] { x.inventarna_st, x.Naslov, x.Avtor, x.Leto, x.Section, x.Zalozba, "Več", stat });
+
+            }
+
+            for (int i = 0; i < knjigegrid.Rows.Count; i++)
+            {
+
+                string stat = Convert.ToString(knjigegrid.Rows[i].Cells[7].Value);
+                if (stat == "Izposojeno")
+                    knjigegrid.Rows[i].Cells[7].Style.BackColor = Color.Red;
+                else
+                    knjigegrid.Rows[i].Cells[7].Style.BackColor = Color.Green;
+
+            }
+        }
+
+        private void allizpis_Click(object sender, EventArgs e)
+        {
+            polnjenje();
+        }
     }
 }
