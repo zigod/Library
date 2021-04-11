@@ -544,5 +544,23 @@ namespace Library
             con.Close();
             return frek;
         }
+
+        public static List<string> TopUporabniki(string zac, string kon)
+        {
+            List<string> toplist = new List<string>();
+            SQLiteConnection con = connect();
+            con.Open();
+            using(SQLiteCommand com = new SQLiteCommand(con))
+            {
+                com.CommandText = "SELECT count(*),u.name,u.surname FROM users u INNER JOIN rents r ON r.user_id = u.id  WHERE r.date BETWEEN '" + zac + "' AND '" + kon + "' GROUP BY u.name,u.surname ORDER BY count(*)  DESC LIMIT 10;";
+                SQLiteDataReader read = com.ExecuteReader();
+                while (read.Read())
+                {
+                    toplist.Add(read.GetString(1) + " " + read.GetString(2));
+                }
+            }
+            con.Close();
+            return toplist;
+        }
     }
 }

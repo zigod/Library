@@ -35,6 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.rezultatlabel = new System.Windows.Forms.Label();
             this.rezbutton = new System.Windows.Forms.Button();
+            this.toplistbox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -98,11 +99,20 @@
             this.rezbutton.UseVisualStyleBackColor = true;
             this.rezbutton.Click += new System.EventHandler(this.rezbutton_Click);
             // 
+            // toplistbox
+            // 
+            this.toplistbox.FormattingEnabled = true;
+            this.toplistbox.Location = new System.Drawing.Point(226, 269);
+            this.toplistbox.Name = "toplistbox";
+            this.toplistbox.Size = new System.Drawing.Size(247, 186);
+            this.toplistbox.TabIndex = 7;
+            // 
             // statistika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 350);
+            this.ClientSize = new System.Drawing.Size(800, 490);
+            this.Controls.Add(this.toplistbox);
             this.Controls.Add(this.rezbutton);
             this.Controls.Add(this.rezultatlabel);
             this.Controls.Add(this.label3);
@@ -126,5 +136,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label rezultatlabel;
         private System.Windows.Forms.Button rezbutton;
+        private System.Windows.Forms.ListBox toplistbox;
     }
 }
