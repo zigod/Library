@@ -50,6 +50,7 @@ namespace Library
                     MessageBox.Show("Uspešno izposodil knjigo");
                 else
                     MessageBox.Show("Prislo je do napake");
+                ckgrid.Rows.Clear();
                 polnjenje();
             }
         }

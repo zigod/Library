@@ -91,6 +91,9 @@ namespace Library
             this.ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ogl = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.izpobutton = new System.Windows.Forms.Button();
+            this.prostbutton = new System.Windows.Forms.Button();
+            this.allizpis = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.knjigegrid)).BeginInit();
@@ -116,6 +119,9 @@ namespace Library
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Bisque;
+            this.tabPage1.Controls.Add(this.allizpis);
+            this.tabPage1.Controls.Add(this.prostbutton);
+            this.tabPage1.Controls.Add(this.izpobutton);
             this.tabPage1.Controls.Add(this.poc);
             this.tabPage1.Controls.Add(this.orderbutton);
             this.tabPage1.Controls.Add(this.descbutton);
@@ -702,6 +708,36 @@ namespace Library
             this.id.Name = "id";
             this.id.Visible = false;
             // 
+            // izpobutton
+            // 
+            this.izpobutton.Location = new System.Drawing.Point(6, 643);
+            this.izpobutton.Name = "izpobutton";
+            this.izpobutton.Size = new System.Drawing.Size(284, 38);
+            this.izpobutton.TabIndex = 9;
+            this.izpobutton.Text = "Prikaz samo Izposojenih knjig";
+            this.izpobutton.UseVisualStyleBackColor = true;
+            this.izpobutton.Click += new System.EventHandler(this.izpobutton_Click);
+            // 
+            // prostbutton
+            // 
+            this.prostbutton.Location = new System.Drawing.Point(431, 643);
+            this.prostbutton.Name = "prostbutton";
+            this.prostbutton.Size = new System.Drawing.Size(284, 38);
+            this.prostbutton.TabIndex = 10;
+            this.prostbutton.Text = "Prikaz samo prostih knjig";
+            this.prostbutton.UseVisualStyleBackColor = true;
+            this.prostbutton.Click += new System.EventHandler(this.prostbutton_Click);
+            // 
+            // allizpis
+            // 
+            this.allizpis.Location = new System.Drawing.Point(801, 643);
+            this.allizpis.Name = "allizpis";
+            this.allizpis.Size = new System.Drawing.Size(284, 38);
+            this.allizpis.TabIndex = 11;
+            this.allizpis.Text = "Izpisi vse";
+            this.allizpis.UseVisualStyleBackColor = true;
+            this.allizpis.Click += new System.EventHandler(this.allizpis_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -790,6 +826,9 @@ namespace Library
         private System.Windows.Forms.DataGridViewTextBoxColumn publ;
         private System.Windows.Forms.DataGridViewButtonColumn oglej;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.Button izpobutton;
+        private System.Windows.Forms.Button prostbutton;
+        private System.Windows.Forms.Button allizpis;
     }
 }
 
