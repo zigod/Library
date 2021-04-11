@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.ckgrid = new System.Windows.Forms.DataGridView();
-            this.searchbar = new System.Windows.Forms.TextBox();
-            this.searchbutton = new System.Windows.Forms.Button();
             this.inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nasl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.avtor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,7 +36,10 @@
             this.sec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.publ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reserve = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.searchbar = new System.Windows.Forms.TextBox();
+            this.searchbutton = new System.Windows.Forms.Button();
             this.nazajbutton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ckgrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,27 +55,11 @@
             this.sec,
             this.publ,
             this.reserve});
-            this.ckgrid.Location = new System.Drawing.Point(-3, 123);
+            this.ckgrid.Location = new System.Drawing.Point(12, 61);
             this.ckgrid.Name = "ckgrid";
-            this.ckgrid.Size = new System.Drawing.Size(1148, 485);
+            this.ckgrid.Size = new System.Drawing.Size(1146, 485);
             this.ckgrid.TabIndex = 1;
             this.ckgrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ckgrid_CellContentClick);
-            // 
-            // searchbar
-            // 
-            this.searchbar.Location = new System.Drawing.Point(12, 44);
-            this.searchbar.Name = "searchbar";
-            this.searchbar.Size = new System.Drawing.Size(342, 20);
-            this.searchbar.TabIndex = 2;
-            // 
-            // searchbutton
-            // 
-            this.searchbutton.Location = new System.Drawing.Point(360, 44);
-            this.searchbutton.Name = "searchbutton";
-            this.searchbutton.Size = new System.Drawing.Size(58, 20);
-            this.searchbutton.TabIndex = 3;
-            this.searchbutton.Text = "isci";
-            this.searchbutton.UseVisualStyleBackColor = true;
             // 
             // inv
             // 
@@ -114,9 +99,26 @@
             this.reserve.HeaderText = "Izposodi";
             this.reserve.Name = "reserve";
             // 
+            // searchbar
+            // 
+            this.searchbar.Location = new System.Drawing.Point(12, 35);
+            this.searchbar.Name = "searchbar";
+            this.searchbar.Size = new System.Drawing.Size(342, 20);
+            this.searchbar.TabIndex = 2;
+            // 
+            // searchbutton
+            // 
+            this.searchbutton.Location = new System.Drawing.Point(360, 35);
+            this.searchbutton.Name = "searchbutton";
+            this.searchbutton.Size = new System.Drawing.Size(81, 21);
+            this.searchbutton.TabIndex = 3;
+            this.searchbutton.Text = "Išči";
+            this.searchbutton.UseVisualStyleBackColor = true;
+            this.searchbutton.Click += new System.EventHandler(this.searchbutton_Click);
+            // 
             // nazajbutton
             // 
-            this.nazajbutton.Location = new System.Drawing.Point(12, 614);
+            this.nazajbutton.Location = new System.Drawing.Point(12, 564);
             this.nazajbutton.Name = "nazajbutton";
             this.nazajbutton.Size = new System.Drawing.Size(109, 49);
             this.nazajbutton.TabIndex = 4;
@@ -124,11 +126,21 @@
             this.nazajbutton.UseVisualStyleBackColor = true;
             this.nazajbutton.Click += new System.EventHandler(this.nazajbutton_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Iskanje knjig:";
+            // 
             // clandodajknjigo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 696);
+            this.ClientSize = new System.Drawing.Size(1179, 625);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.nazajbutton);
             this.Controls.Add(this.searchbutton);
             this.Controls.Add(this.searchbar);
@@ -154,5 +166,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn publ;
         private System.Windows.Forms.DataGridViewButtonColumn reserve;
         private System.Windows.Forms.Button nazajbutton;
+        private System.Windows.Forms.Label label1;
     }
 }
