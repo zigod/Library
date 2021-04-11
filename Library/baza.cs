@@ -466,6 +466,42 @@ namespace Library
             return preveritev;
         }
 
+        public static List<knjige> IzpisKnjigNaVoljo(int status)
+        {
+            List<knjige> knjige = new List<knjige>();
+            SQLiteConnection con = connect();
+            con.Open();
+            using (SQLiteCommand com = new SQLiteCommand(con))
+            {
+              
+                com.CommandText = "SELECT b.id,b.title,b.year,b.author,b.publisher,s.name,b.current_state FROM books b INNER JOIN sections s ON b.section_id = s.id WHERE current_state = " + status +" ORDER BY b.id;";
+            
+
+                SQLiteDataReader read = com.ExecuteReader();
+                while (read.Read())
+                {
+
+                    int id = read.GetInt32(0);
+                    string naslov = read.GetString(1);
+                    int leto = read.GetInt32(2);
+                    string avtor = read.GetString(3);
+                    string publisher = read.GetString(4);
+                    string section = read.GetString(5);
+                    int state = read.GetInt32(6);
+                    knjige knjiga = new knjige(id, naslov, leto, avtor, publisher, section, state);
+
+
+                    knjige.Add(knjiga);
+
+                }
+                com.Dispose();
+                con.Close();
+                return knjige;
+
+            }
+         
+        }
+
         public static List<knjige> IzpisIzposojenih(int id_u)
         {
             List<knjige> knjige = new List<knjige>();

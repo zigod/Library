@@ -101,6 +101,11 @@ namespace Library
             }     
         }
 
-  
+        private void dodknjigobutton_Click(object sender, EventArgs e)
+        {
+            clandodajknjigo ck = new clandodajknjigo(idu);
+            ck.Show();
+            this.Close();
+        }
     }
 }

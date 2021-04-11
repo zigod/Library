@@ -50,6 +50,7 @@
             this.leto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oddelek = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrni = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dodknjigobutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.vrnitevGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -244,11 +245,22 @@
             this.vrni.Name = "vrni";
             this.vrni.Width = 200;
             // 
+            // dodknjigobutton
+            // 
+            this.dodknjigobutton.Location = new System.Drawing.Point(514, 391);
+            this.dodknjigobutton.Name = "dodknjigobutton";
+            this.dodknjigobutton.Size = new System.Drawing.Size(163, 41);
+            this.dodknjigobutton.TabIndex = 18;
+            this.dodknjigobutton.Text = "Izposodi knjigo";
+            this.dodknjigobutton.UseVisualStyleBackColor = true;
+            this.dodknjigobutton.Click += new System.EventHandler(this.dodknjigobutton_Click);
+            // 
             // clanipodatki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 916);
+            this.Controls.Add(this.dodknjigobutton);
             this.Controls.Add(this.vrnitevGrid);
             this.Controls.Add(this.cancel_button);
             this.Controls.Add(this.potrdibutton);
@@ -298,5 +310,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn leto;
         private System.Windows.Forms.DataGridViewTextBoxColumn oddelek;
         private System.Windows.Forms.DataGridViewButtonColumn vrni;
+        private System.Windows.Forms.Button dodknjigobutton;
     }
 }

@@ -66,6 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="baza.cs" />
+    <Compile Include="clandodajknjigo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clandodajknjigo.Designer.cs">
+      <DependentUpon>clandodajknjigo.cs</DependentUpon>
+    </Compile>
     <Compile Include="clanipodatki.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
       <DependentUpon>spremeniStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="Users.cs" />
+    <EmbeddedResource Include="clandodajknjigo.resx">
+      <DependentUpon>clandodajknjigo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="clanipodatki.resx">
       <DependentUpon>clanipodatki.cs</DependentUpon>
     </EmbeddedResource>
