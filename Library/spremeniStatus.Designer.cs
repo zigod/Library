@@ -54,7 +54,7 @@ namespace Library
             this.id});
             this.usersGridView.Location = new System.Drawing.Point(18, 94);
             this.usersGridView.Name = "usersGridView";
-            this.usersGridView.Size = new System.Drawing.Size(542, 502);
+            this.usersGridView.Size = new System.Drawing.Size(597, 502);
             this.usersGridView.TabIndex = 0;
             this.usersGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersGridView_CellContentClick);
             // 
@@ -108,6 +108,7 @@ namespace Library
             this.enaslov.HeaderText = "E-naslov";
             this.enaslov.Name = "enaslov";
             this.enaslov.ReadOnly = true;
+            this.enaslov.Width = 150;
             // 
             // izposodi
             // 
@@ -124,7 +125,7 @@ namespace Library
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 608);
+            this.ClientSize = new System.Drawing.Size(619, 608);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.iskanjeTextBox);
             this.Controls.Add(this.label1);

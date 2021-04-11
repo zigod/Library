@@ -175,6 +175,91 @@ namespace Library
         {
             polnjenje();
         }
+        
+        private void dodajanjeTab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void zalozbaBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void oddelekComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pridobitevComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void opombeTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void avtorTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void letoTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void naslovKnjigeTextBox_TextChanged(object sender, EventArgs e)
+        {
+        
+        }
 
         private void izpobutton_Click(object sender, EventArgs e)
         {

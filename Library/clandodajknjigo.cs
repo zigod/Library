@@ -54,5 +54,20 @@ namespace Library
                 polnjenje();
             }
         }
+
+        private void searchbutton_Click(object sender, EventArgs e)
+        {
+            ckgrid.Rows.Clear();
+
+            string searchtext = searchbar.Text;
+
+            List<knjige> knigga = baza.SearchKnjig(searchtext);
+
+            foreach (knjige x in knigga)
+
+            {
+                ckgrid.Rows.Add(new object[] { x.inventarna_st, x.Naslov, x.Avtor, x.Leto, x.Section, x.Zalozba, "Izposodi" });
+            }
+        }
     }
 }
