@@ -31,6 +31,9 @@ namespace Library
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.allizpis = new System.Windows.Forms.Button();
+            this.prostbutton = new System.Windows.Forms.Button();
+            this.izpobutton = new System.Windows.Forms.Button();
             this.poc = new System.Windows.Forms.Button();
             this.orderbutton = new System.Windows.Forms.Button();
             this.descbutton = new System.Windows.Forms.RadioButton();
@@ -40,14 +43,6 @@ namespace Library
             this.searchbutton = new System.Windows.Forms.Button();
             this.searchbar = new System.Windows.Forms.TextBox();
             this.knjigegrid = new System.Windows.Forms.DataGridView();
-            this.inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nasl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avtor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.let = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oglej = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dodajanjeTab = new System.Windows.Forms.TabControl();
             this.dodajanjeClanovPage = new System.Windows.Forms.TabPage();
@@ -91,9 +86,17 @@ namespace Library
             this.ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ogl = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.izpobutton = new System.Windows.Forms.Button();
-            this.prostbutton = new System.Windows.Forms.Button();
-            this.allizpis = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.izvozIme = new System.Windows.Forms.TextBox();
+            this.izvozButton = new System.Windows.Forms.Button();
+            this.inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nasl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.avtor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.let = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oglej = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.knjigegrid)).BeginInit();
@@ -119,6 +122,9 @@ namespace Library
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Bisque;
+            this.tabPage1.Controls.Add(this.izvozButton);
+            this.tabPage1.Controls.Add(this.izvozIme);
+            this.tabPage1.Controls.Add(this.label18);
             this.tabPage1.Controls.Add(this.allizpis);
             this.tabPage1.Controls.Add(this.prostbutton);
             this.tabPage1.Controls.Add(this.izpobutton);
@@ -138,6 +144,36 @@ namespace Library
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Izpis";
             // 
+            // allizpis
+            // 
+            this.allizpis.Location = new System.Drawing.Point(801, 643);
+            this.allizpis.Name = "allizpis";
+            this.allizpis.Size = new System.Drawing.Size(284, 38);
+            this.allizpis.TabIndex = 11;
+            this.allizpis.Text = "Izpisi vse";
+            this.allizpis.UseVisualStyleBackColor = true;
+            this.allizpis.Click += new System.EventHandler(this.allizpis_Click);
+            // 
+            // prostbutton
+            // 
+            this.prostbutton.Location = new System.Drawing.Point(431, 643);
+            this.prostbutton.Name = "prostbutton";
+            this.prostbutton.Size = new System.Drawing.Size(284, 38);
+            this.prostbutton.TabIndex = 10;
+            this.prostbutton.Text = "Prikaz samo prostih knjig";
+            this.prostbutton.UseVisualStyleBackColor = true;
+            this.prostbutton.Click += new System.EventHandler(this.prostbutton_Click);
+            // 
+            // izpobutton
+            // 
+            this.izpobutton.Location = new System.Drawing.Point(6, 643);
+            this.izpobutton.Name = "izpobutton";
+            this.izpobutton.Size = new System.Drawing.Size(284, 38);
+            this.izpobutton.TabIndex = 9;
+            this.izpobutton.Text = "Prikaz samo Izposojenih knjig";
+            this.izpobutton.UseVisualStyleBackColor = true;
+            this.izpobutton.Click += new System.EventHandler(this.izpobutton_Click);
+            // 
             // poc
             // 
             this.poc.Location = new System.Drawing.Point(6, 69);
@@ -150,7 +186,7 @@ namespace Library
             // 
             // orderbutton
             // 
-            this.orderbutton.Location = new System.Drawing.Point(875, 78);
+            this.orderbutton.Location = new System.Drawing.Point(548, 80);
             this.orderbutton.Name = "orderbutton";
             this.orderbutton.Size = new System.Drawing.Size(167, 30);
             this.orderbutton.TabIndex = 7;
@@ -161,7 +197,7 @@ namespace Library
             // descbutton
             // 
             this.descbutton.AutoSize = true;
-            this.descbutton.Location = new System.Drawing.Point(1015, 42);
+            this.descbutton.Location = new System.Drawing.Point(688, 44);
             this.descbutton.Name = "descbutton";
             this.descbutton.Size = new System.Drawing.Size(70, 17);
             this.descbutton.TabIndex = 6;
@@ -172,7 +208,7 @@ namespace Library
             // 
             this.ascbutton.AutoSize = true;
             this.ascbutton.Checked = true;
-            this.ascbutton.Location = new System.Drawing.Point(1015, 19);
+            this.ascbutton.Location = new System.Drawing.Point(688, 21);
             this.ascbutton.Name = "ascbutton";
             this.ascbutton.Size = new System.Drawing.Size(85, 17);
             this.ascbutton.TabIndex = 5;
@@ -190,7 +226,7 @@ namespace Library
             "Leto",
             "Sections",
             "Publisher"});
-            this.urcombo.Location = new System.Drawing.Point(875, 26);
+            this.urcombo.Location = new System.Drawing.Point(548, 28);
             this.urcombo.Name = "urcombo";
             this.urcombo.Size = new System.Drawing.Size(121, 21);
             this.urcombo.TabIndex = 4;
@@ -198,7 +234,7 @@ namespace Library
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(804, 30);
+            this.label17.Location = new System.Drawing.Point(477, 32);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(50, 13);
             this.label17.TabIndex = 3;
@@ -239,50 +275,6 @@ namespace Library
             this.knjigegrid.Size = new System.Drawing.Size(1246, 485);
             this.knjigegrid.TabIndex = 0;
             this.knjigegrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.knjigegrid_CellContentClick);
-            // 
-            // inv
-            // 
-            this.inv.HeaderText = "Inventarna st";
-            this.inv.Name = "inv";
-            // 
-            // nasl
-            // 
-            this.nasl.HeaderText = "Naslov";
-            this.nasl.Name = "nasl";
-            // 
-            // avtor
-            // 
-            this.avtor.HeaderText = "Avtor";
-            this.avtor.Name = "avtor";
-            this.avtor.Width = 250;
-            // 
-            // let
-            // 
-            this.let.HeaderText = "Leto";
-            this.let.Name = "let";
-            // 
-            // sec
-            // 
-            this.sec.HeaderText = "Sections";
-            this.sec.Name = "sec";
-            this.sec.Width = 200;
-            // 
-            // publ
-            // 
-            this.publ.HeaderText = "Publisher";
-            this.publ.Name = "publ";
-            this.publ.Width = 250;
-            // 
-            // oglej
-            // 
-            this.oglej.HeaderText = "Oglej več";
-            this.oglej.Name = "oglej";
-            this.oglej.Text = "Oglej";
-            // 
-            // status
-            // 
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
             // 
             // tabPage2
             // 
@@ -708,35 +700,75 @@ namespace Library
             this.id.Name = "id";
             this.id.Visible = false;
             // 
-            // izpobutton
+            // label18
             // 
-            this.izpobutton.Location = new System.Drawing.Point(6, 643);
-            this.izpobutton.Name = "izpobutton";
-            this.izpobutton.Size = new System.Drawing.Size(284, 38);
-            this.izpobutton.TabIndex = 9;
-            this.izpobutton.Text = "Prikaz samo Izposojenih knjig";
-            this.izpobutton.UseVisualStyleBackColor = true;
-            this.izpobutton.Click += new System.EventHandler(this.izpobutton_Click);
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(1009, 23);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(113, 13);
+            this.label18.TabIndex = 12;
+            this.label18.Text = "Ime datoteke za izvoz:";
             // 
-            // prostbutton
+            // izvozIme
             // 
-            this.prostbutton.Location = new System.Drawing.Point(431, 643);
-            this.prostbutton.Name = "prostbutton";
-            this.prostbutton.Size = new System.Drawing.Size(284, 38);
-            this.prostbutton.TabIndex = 10;
-            this.prostbutton.Text = "Prikaz samo prostih knjig";
-            this.prostbutton.UseVisualStyleBackColor = true;
-            this.prostbutton.Click += new System.EventHandler(this.prostbutton_Click);
+            this.izvozIme.Location = new System.Drawing.Point(1010, 41);
+            this.izvozIme.Name = "izvozIme";
+            this.izvozIme.Size = new System.Drawing.Size(147, 20);
+            this.izvozIme.TabIndex = 13;
             // 
-            // allizpis
+            // izvozButton
             // 
-            this.allizpis.Location = new System.Drawing.Point(801, 643);
-            this.allizpis.Name = "allizpis";
-            this.allizpis.Size = new System.Drawing.Size(284, 38);
-            this.allizpis.TabIndex = 11;
-            this.allizpis.Text = "Izpisi vse";
-            this.allizpis.UseVisualStyleBackColor = true;
-            this.allizpis.Click += new System.EventHandler(this.allizpis_Click);
+            this.izvozButton.Location = new System.Drawing.Point(1010, 67);
+            this.izvozButton.Name = "izvozButton";
+            this.izvozButton.Size = new System.Drawing.Size(147, 23);
+            this.izvozButton.TabIndex = 14;
+            this.izvozButton.Text = "Izvoz";
+            this.izvozButton.UseVisualStyleBackColor = true;
+            this.izvozButton.Click += new System.EventHandler(this.izvozButton_Click);
+            // 
+            // inv
+            // 
+            this.inv.HeaderText = "Inventarna st";
+            this.inv.Name = "inv";
+            // 
+            // nasl
+            // 
+            this.nasl.HeaderText = "Naslov";
+            this.nasl.Name = "nasl";
+            // 
+            // avtor
+            // 
+            this.avtor.HeaderText = "Avtor";
+            this.avtor.Name = "avtor";
+            this.avtor.Width = 250;
+            // 
+            // let
+            // 
+            this.let.HeaderText = "Leto";
+            this.let.Name = "let";
+            // 
+            // sec
+            // 
+            this.sec.HeaderText = "Oddelek";
+            this.sec.Name = "sec";
+            this.sec.Width = 200;
+            // 
+            // publ
+            // 
+            this.publ.HeaderText = "Založnik";
+            this.publ.Name = "publ";
+            this.publ.Width = 250;
+            // 
+            // oglej
+            // 
+            this.oglej.HeaderText = "Oglej več";
+            this.oglej.Name = "oglej";
+            this.oglej.Text = "Oglej";
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
             // 
             // main
             // 
@@ -818,6 +850,12 @@ namespace Library
         private System.Windows.Forms.ComboBox urcombo;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button poc;
+        private System.Windows.Forms.Button izpobutton;
+        private System.Windows.Forms.Button prostbutton;
+        private System.Windows.Forms.Button allizpis;
+        private System.Windows.Forms.Button izvozButton;
+        private System.Windows.Forms.TextBox izvozIme;
+        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.DataGridViewTextBoxColumn inv;
         private System.Windows.Forms.DataGridViewTextBoxColumn nasl;
         private System.Windows.Forms.DataGridViewTextBoxColumn avtor;
@@ -826,9 +864,6 @@ namespace Library
         private System.Windows.Forms.DataGridViewTextBoxColumn publ;
         private System.Windows.Forms.DataGridViewButtonColumn oglej;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.Button izpobutton;
-        private System.Windows.Forms.Button prostbutton;
-        private System.Windows.Forms.Button allizpis;
     }
 }
 

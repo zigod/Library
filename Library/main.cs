@@ -7,9 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Core;
+using Microsoft.Office.Interop;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace Library
 {
+
+
     public partial class main : Form
     {
         public main()
@@ -323,6 +329,65 @@ namespace Library
         private void allizpis_Click(object sender, EventArgs e)
         {
             polnjenje();
+        }
+
+        Excel.Application oXL;
+        Excel._Workbook oWB;
+        Excel._Worksheet oSheet;
+        int naprej = 2;
+        private void izvozButton_Click(object sender, EventArgs e)
+        {
+            oXL = new Excel.Application();
+            oWB = (Excel.Workbook)oXL.Workbooks.Add();
+            oSheet = (Excel._Worksheet)oWB.ActiveSheet;
+
+            oSheet.Cells[1, 1] = "Naslov";
+            oSheet.Cells[1, 1].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gray);
+            oSheet.Cells[1, 2] = "Avtor";
+            oSheet.Cells[1, 2].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gray);
+            oSheet.Cells[1, 3] = "Leto";
+            oSheet.Cells[1, 3].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gray);
+            oSheet.Cells[1, 4] = "Oddelek";
+            oSheet.Cells[1, 4].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gray);
+            oSheet.Cells[1, 5] = "Založnik";
+            oSheet.Cells[1, 5].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gray);
+            oSheet.Cells[1, 6] = "Status";
+            oSheet.Cells[1, 6].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gray);
+
+            oSheet.get_Range("A1", "F1").Font.Bold = true;
+            oSheet.get_Range("A1", "F1").VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+
+            oSheet.Columns[1].ColumnWidth = 60;
+            oSheet.Columns[2].ColumnWidth = 40;
+            oSheet.Columns[3].ColumnWidth = 7;
+            oSheet.Columns[4].ColumnWidth = 30;
+            oSheet.Columns[5].ColumnWidth = 42;
+
+
+
+            List<knjige> knigger = baza.izpisvsehknjig();
+
+            foreach (knjige x in knigger)
+            {
+                //worksheet.Cells[i + 2, 1].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Green);
+                oSheet.Cells[naprej, 1] = x.Naslov;
+                oSheet.Cells[naprej, 2] = x.Avtor;
+                oSheet.Cells[naprej, 3] = x.Leto;
+                oSheet.Cells[naprej, 4] = x.Section;
+                oSheet.Cells[naprej, 5] = x.Zalozba;
+                if (x.Status == 0)
+                {
+                    oSheet.Cells[naprej, 6].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                }
+                else
+                {
+                    oSheet.Cells[naprej, 6].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Green);
+                }
+                naprej++;
+            }
+
+            oWB.Application.ActiveWorkbook.SaveAs(@"C:\Users\Ziga\Desktop\Excel\" + izvozIme.Text + ".xlsx");
+
         }
     }
 }
