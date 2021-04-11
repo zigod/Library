@@ -31,6 +31,10 @@ namespace Library
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.statistika = new System.Windows.Forms.Button();
+            this.izvozButton = new System.Windows.Forms.Button();
+            this.izvozIme = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.allizpis = new System.Windows.Forms.Button();
             this.prostbutton = new System.Windows.Forms.Button();
             this.izpobutton = new System.Windows.Forms.Button();
@@ -43,6 +47,14 @@ namespace Library
             this.searchbutton = new System.Windows.Forms.Button();
             this.searchbar = new System.Windows.Forms.TextBox();
             this.knjigegrid = new System.Windows.Forms.DataGridView();
+            this.inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nasl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.avtor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.let = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oglej = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dodajanjeTab = new System.Windows.Forms.TabControl();
             this.dodajanjeClanovPage = new System.Windows.Forms.TabPage();
@@ -86,22 +98,7 @@ namespace Library
             this.ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ogl = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.izpobutton = new System.Windows.Forms.Button();
-            this.prostbutton = new System.Windows.Forms.Button();
-            this.allizpis = new System.Windows.Forms.Button();
-            this.statistika = new System.Windows.Forms.Button();
             this.logout = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.izvozIme = new System.Windows.Forms.TextBox();
-            this.izvozButton = new System.Windows.Forms.Button();
-            this.inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nasl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avtor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.let = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oglej = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.knjigegrid)).BeginInit();
@@ -121,12 +118,13 @@ namespace Library
             this.tabControl1.Location = new System.Drawing.Point(3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1259, 751);
+            this.tabControl1.Size = new System.Drawing.Size(1535, 751);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Bisque;
+            this.tabPage1.Controls.Add(this.logout);
             this.tabPage1.Controls.Add(this.statistika);
             this.tabPage1.Controls.Add(this.izvozButton);
             this.tabPage1.Controls.Add(this.izvozIme);
@@ -146,13 +144,49 @@ namespace Library
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1251, 725);
+            this.tabPage1.Size = new System.Drawing.Size(1527, 725);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Izpis";
             // 
+            // statistika
+            // 
+            this.statistika.Location = new System.Drawing.Point(962, 643);
+            this.statistika.Name = "statistika";
+            this.statistika.Size = new System.Drawing.Size(284, 38);
+            this.statistika.TabIndex = 12;
+            this.statistika.Text = "Statistika";
+            this.statistika.UseVisualStyleBackColor = true;
+            this.statistika.Click += new System.EventHandler(this.statistika_Click);
+            // 
+            // izvozButton
+            // 
+            this.izvozButton.Location = new System.Drawing.Point(829, 69);
+            this.izvozButton.Name = "izvozButton";
+            this.izvozButton.Size = new System.Drawing.Size(147, 23);
+            this.izvozButton.TabIndex = 14;
+            this.izvozButton.Text = "Izvoz";
+            this.izvozButton.UseVisualStyleBackColor = true;
+            this.izvozButton.Click += new System.EventHandler(this.izvozButton_Click);
+            // 
+            // izvozIme
+            // 
+            this.izvozIme.Location = new System.Drawing.Point(829, 43);
+            this.izvozIme.Name = "izvozIme";
+            this.izvozIme.Size = new System.Drawing.Size(147, 20);
+            this.izvozIme.TabIndex = 13;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(828, 25);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(113, 13);
+            this.label18.TabIndex = 12;
+            this.label18.Text = "Ime datoteke za izvoz:";
+            // 
             // allizpis
             // 
-            this.allizpis.Location = new System.Drawing.Point(801, 643);
+            this.allizpis.Location = new System.Drawing.Point(638, 643);
             this.allizpis.Name = "allizpis";
             this.allizpis.Size = new System.Drawing.Size(284, 38);
             this.allizpis.TabIndex = 11;
@@ -162,7 +196,7 @@ namespace Library
             // 
             // prostbutton
             // 
-            this.prostbutton.Location = new System.Drawing.Point(431, 643);
+            this.prostbutton.Location = new System.Drawing.Point(318, 643);
             this.prostbutton.Name = "prostbutton";
             this.prostbutton.Size = new System.Drawing.Size(284, 38);
             this.prostbutton.TabIndex = 10;
@@ -192,7 +226,7 @@ namespace Library
             // 
             // orderbutton
             // 
-            this.orderbutton.Location = new System.Drawing.Point(548, 80);
+            this.orderbutton.Location = new System.Drawing.Point(536, 78);
             this.orderbutton.Name = "orderbutton";
             this.orderbutton.Size = new System.Drawing.Size(167, 30);
             this.orderbutton.TabIndex = 7;
@@ -203,7 +237,7 @@ namespace Library
             // descbutton
             // 
             this.descbutton.AutoSize = true;
-            this.descbutton.Location = new System.Drawing.Point(688, 44);
+            this.descbutton.Location = new System.Drawing.Point(676, 42);
             this.descbutton.Name = "descbutton";
             this.descbutton.Size = new System.Drawing.Size(70, 17);
             this.descbutton.TabIndex = 6;
@@ -214,7 +248,7 @@ namespace Library
             // 
             this.ascbutton.AutoSize = true;
             this.ascbutton.Checked = true;
-            this.ascbutton.Location = new System.Drawing.Point(688, 21);
+            this.ascbutton.Location = new System.Drawing.Point(676, 19);
             this.ascbutton.Name = "ascbutton";
             this.ascbutton.Size = new System.Drawing.Size(85, 17);
             this.ascbutton.TabIndex = 5;
@@ -232,7 +266,7 @@ namespace Library
             "Leto",
             "Sections",
             "Publisher"});
-            this.urcombo.Location = new System.Drawing.Point(548, 28);
+            this.urcombo.Location = new System.Drawing.Point(536, 26);
             this.urcombo.Name = "urcombo";
             this.urcombo.Size = new System.Drawing.Size(121, 21);
             this.urcombo.TabIndex = 4;
@@ -240,7 +274,7 @@ namespace Library
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(477, 32);
+            this.label17.Location = new System.Drawing.Point(465, 30);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(50, 13);
             this.label17.TabIndex = 3;
@@ -265,6 +299,7 @@ namespace Library
             // 
             // knjigegrid
             // 
+            this.knjigegrid.AllowUserToAddRows = false;
             this.knjigegrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.knjigegrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.knjigegrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -282,6 +317,50 @@ namespace Library
             this.knjigegrid.TabIndex = 0;
             this.knjigegrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.knjigegrid_CellContentClick);
             // 
+            // inv
+            // 
+            this.inv.HeaderText = "Inventarna st";
+            this.inv.Name = "inv";
+            // 
+            // nasl
+            // 
+            this.nasl.HeaderText = "Naslov";
+            this.nasl.Name = "nasl";
+            // 
+            // avtor
+            // 
+            this.avtor.HeaderText = "Avtor";
+            this.avtor.Name = "avtor";
+            this.avtor.Width = 250;
+            // 
+            // let
+            // 
+            this.let.HeaderText = "Leto";
+            this.let.Name = "let";
+            // 
+            // sec
+            // 
+            this.sec.HeaderText = "Oddelek";
+            this.sec.Name = "sec";
+            this.sec.Width = 200;
+            // 
+            // publ
+            // 
+            this.publ.HeaderText = "Založnik";
+            this.publ.Name = "publ";
+            this.publ.Width = 250;
+            // 
+            // oglej
+            // 
+            this.oglej.HeaderText = "Oglej več";
+            this.oglej.Name = "oglej";
+            this.oglej.Text = "Oglej";
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Bisque;
@@ -289,7 +368,7 @@ namespace Library
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1251, 725);
+            this.tabPage2.Size = new System.Drawing.Size(1527, 725);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Dodajanje";
             // 
@@ -652,12 +731,13 @@ namespace Library
             this.tabPage3.Controls.Add(this.usersgrid);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1251, 725);
+            this.tabPage3.Size = new System.Drawing.Size(1527, 725);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Člani";
             // 
             // usersgrid
             // 
+            this.usersgrid.AllowUserToAddRows = false;
             this.usersgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usersgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
@@ -706,91 +786,11 @@ namespace Library
             this.id.Name = "id";
             this.id.Visible = false;
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(1009, 23);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(113, 13);
-            this.label18.TabIndex = 12;
-            this.label18.Text = "Ime datoteke za izvoz:";
-            // 
-            // izvozIme
-            // 
-            this.izvozIme.Location = new System.Drawing.Point(1010, 41);
-            this.izvozIme.Name = "izvozIme";
-            this.izvozIme.Size = new System.Drawing.Size(147, 20);
-            this.izvozIme.TabIndex = 13;
-            // 
-            // izvozButton
-            // 
-            this.izvozButton.Location = new System.Drawing.Point(1010, 67);
-            this.izvozButton.Name = "izvozButton";
-            this.izvozButton.Size = new System.Drawing.Size(147, 23);
-            this.izvozButton.TabIndex = 14;
-            this.izvozButton.Text = "Izvoz";
-            this.izvozButton.UseVisualStyleBackColor = true;
-            this.izvozButton.Click += new System.EventHandler(this.izvozButton_Click);
-            // 
-            // inv
-            // 
-            this.inv.HeaderText = "Inventarna st";
-            this.inv.Name = "inv";
-            // 
-            // nasl
-            // 
-            this.nasl.HeaderText = "Naslov";
-            this.nasl.Name = "nasl";
-            // 
-            // avtor
-            // 
-            this.avtor.HeaderText = "Avtor";
-            this.avtor.Name = "avtor";
-            this.avtor.Width = 250;
-            // 
-            // let
-            // 
-            this.let.HeaderText = "Leto";
-            this.let.Name = "let";
-            // 
-            // sec
-            // 
-            this.sec.HeaderText = "Oddelek";
-            this.sec.Name = "sec";
-            this.sec.Width = 200;
-            // 
-            // publ
-            // 
-            this.publ.HeaderText = "Založnik";
-            this.publ.Name = "publ";
-            this.publ.Width = 250;
-            // 
-            // oglej
-            // 
-            this.oglej.HeaderText = "Oglej več";
-            this.oglej.Name = "oglej";
-            this.oglej.Text = "Oglej";
-            // 
-            // status
-            // 
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            // 
-            // statistika
-            // 
-            this.statistika.Location = new System.Drawing.Point(416, 61);
-            this.statistika.Name = "statistika";
-            this.statistika.Size = new System.Drawing.Size(284, 38);
-            this.statistika.TabIndex = 12;
-            this.statistika.Text = "Statistika";
-            this.statistika.UseVisualStyleBackColor = true;
-            this.statistika.Click += new System.EventHandler(this.statistika_Click);
-            // 
             // logout
             // 
-            this.logout.Location = new System.Drawing.Point(1346, 24);
+            this.logout.Location = new System.Drawing.Point(1048, 27);
             this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(165, 43);
+            this.logout.Size = new System.Drawing.Size(198, 81);
             this.logout.TabIndex = 1;
             this.logout.Text = "Odjava";
             this.logout.UseVisualStyleBackColor = true;
@@ -800,9 +800,7 @@ namespace Library
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1646, 753);
-            this.Controls.Add(this.logout);
-            this.ClientSize = new System.Drawing.Size(1265, 753);
+            this.ClientSize = new System.Drawing.Size(1742, 753);
             this.Controls.Add(this.tabControl1);
             this.Name = "main";
             this.Text = "Form1";
@@ -878,9 +876,6 @@ namespace Library
         private System.Windows.Forms.ComboBox urcombo;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button poc;
-        private System.Windows.Forms.Button izpobutton;
-        private System.Windows.Forms.Button prostbutton;
-        private System.Windows.Forms.Button allizpis;
         private System.Windows.Forms.Button izvozButton;
         private System.Windows.Forms.TextBox izvozIme;
         private System.Windows.Forms.Label label18;

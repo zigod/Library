@@ -38,6 +38,9 @@ namespace Library
 
         private void polnjenje()
         {
+            knjigegrid.Rows.Clear();
+            usersgrid.Rows.Clear();
+
             List<knjige> knjiga = baza.izpisvsehknjig();
             List<Users> user = baza.IzpisUsers();
             foreach (knjige x in knjiga)
@@ -83,7 +86,9 @@ namespace Library
 
             baza.DodajClana(uporabnik.name, uporabnik.surname, uporabnik.telephone, uporabnik.address, uporabnik.email, uporabnik.notes);
 
-            MessageBox.Show(uporabnik.name +" "+ uporabnik.surname +" "+ uporabnik.telephone +" "+ uporabnik.address +" "+ uporabnik.email +" "+ uporabnik.notes);
+            MessageBox.Show("Uporabnik uspešno dodan");
+
+            polnjenje();
         }
 
         private void usersgrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -124,6 +129,10 @@ namespace Library
             knjige knjiga = new knjige(naslovKnjige, nacinPridobitve, oddelek, leto, avtor, zalozba, opombe);
 
             baza.DodajKnjigo(knjiga.Naslov, knjiga.Shop, knjiga.Section, knjiga.Leto, knjiga.Avtor, knjiga.Zalozba, knjiga.Opomba);
+
+            MessageBox.Show("Knjiga uspešno dodana!");
+
+            polnjenje();
         }
 
         private void searchbutton_Click(object sender, EventArgs e)
@@ -132,7 +141,23 @@ namespace Library
             knjigegrid.Rows.Clear();
             foreach (knjige x in search)
             {
-                knjigegrid.Rows.Add(new object[] { x.inventarna_st, x.Naslov, x.Avtor, x.Leto, x.Section, x.Zalozba, "Več" });
+                string stat = "";
+                if (x.Status == 0)
+                    stat = "Izposojeno";
+                else
+                    stat = "Prosto";
+
+                knjigegrid.Rows.Add(new object[] { x.inventarna_st, x.Naslov, x.Avtor, x.Leto, x.Section, x.Zalozba, "Več", stat });
+            }
+            for (int i = 0; i < knjigegrid.Rows.Count; i++)
+            {
+
+                string stat = Convert.ToString(knjigegrid.Rows[i].Cells[7].Value);
+                if (stat == "Izposojeno")
+                    knjigegrid.Rows[i].Cells[7].Style.BackColor = Color.Red;
+                else
+                    knjigegrid.Rows[i].Cells[7].Style.BackColor = Color.Green;
+
             }
         }
 
@@ -342,10 +367,14 @@ namespace Library
             login log = new login();
             log.Show();
             this.Close();
+        }
+
+
         Excel.Application oXL;
         Excel._Workbook oWB;
         Excel._Worksheet oSheet;
         int naprej = 2;
+        
         private void izvozButton_Click(object sender, EventArgs e)
         {
             oXL = new Excel.Application();

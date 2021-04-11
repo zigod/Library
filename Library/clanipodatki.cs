@@ -22,6 +22,8 @@ namespace Library
       
         private void polnjenje()
         {
+
+            vrnitevGrid.Rows.Clear();
             Users uporabnik = baza.IzpisVsePodatkeOUser(idu);
             imetext.Text = uporabnik.name;
             pritext.Text = uporabnik.surname;
@@ -34,11 +36,8 @@ namespace Library
                 List<knjige> knjiga = baza.IzpisIzposojenih(idu);
                 foreach (knjige x in knjiga)
                 {
-                    vrnitevGrid.Rows.Add(new object[] { x.inventarna_st, x.Naslov, x.Avtor, x.Leto, x.Section, x.Zalozba, "Več" });
+                    vrnitevGrid.Rows.Add(new object[] { x.Naslov, x.Avtor, x.Leto, x.Section, "Vrni", x.inventarna_st });
                 }
-
-            
-
         }
         private void nazajbutton_Click(object sender, EventArgs e)
         {
@@ -106,6 +105,22 @@ namespace Library
             clandodajknjigo ck = new clandodajknjigo(idu);
             ck.Show();
             this.Close();
+        }
+
+        private void vrnitevGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                int id = Convert.ToInt32(vrnitevGrid.Rows[e.RowIndex].Cells[5].Value);
+                bool okstari = baza.RentABook(idu, id, 1);
+                MessageBox.Show(idu + " " + id);
+                if(okstari)
+                {
+                    MessageBox.Show("Uspešno vrnjeno.");
+                }
+            }
+            polnjenje();
+
         }
     }
 }

@@ -58,6 +58,11 @@ namespace Library
             Leto = leto;
             Section = oddelek;
         }
+
+        public knjige(string naslov, string avtor, int leto, string oddelek, int id) : this(naslov, avtor, leto, oddelek)
+        {
+            inventarna_st = id;
+        }
     }
 
 

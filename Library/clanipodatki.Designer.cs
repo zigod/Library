@@ -51,6 +51,7 @@
             this.oddelek = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrni = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dodknjigobutton = new System.Windows.Forms.Button();
+            this.ajdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.vrnitevGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -207,17 +208,20 @@
             // 
             // vrnitevGrid
             // 
+            this.vrnitevGrid.AllowUserToAddRows = false;
             this.vrnitevGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vrnitevGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.title,
             this.Avtor,
             this.leto,
             this.oddelek,
-            this.vrni});
+            this.vrni,
+            this.ajdi});
             this.vrnitevGrid.Location = new System.Drawing.Point(98, 600);
             this.vrnitevGrid.Name = "vrnitevGrid";
             this.vrnitevGrid.Size = new System.Drawing.Size(645, 208);
             this.vrnitevGrid.TabIndex = 17;
+            this.vrnitevGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vrnitevGrid_CellContentClick);
             // 
             // title
             // 
@@ -254,6 +258,13 @@
             this.dodknjigobutton.Text = "Izposodi knjigo";
             this.dodknjigobutton.UseVisualStyleBackColor = true;
             this.dodknjigobutton.Click += new System.EventHandler(this.dodknjigobutton_Click);
+            // 
+            // ajdi
+            // 
+            this.ajdi.HeaderText = "id";
+            this.ajdi.Name = "ajdi";
+            this.ajdi.ReadOnly = true;
+            this.ajdi.Visible = false;
             // 
             // clanipodatki
             // 
@@ -311,5 +322,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn oddelek;
         private System.Windows.Forms.DataGridViewButtonColumn vrni;
         private System.Windows.Forms.Button dodknjigobutton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ajdi;
     }
 }

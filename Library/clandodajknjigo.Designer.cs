@@ -45,6 +45,7 @@
             // 
             // ckgrid
             // 
+            this.ckgrid.AllowUserToAddRows = false;
             this.ckgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ckgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ckgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

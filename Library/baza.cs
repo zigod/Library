@@ -49,7 +49,7 @@ namespace Library
             src = src.ToLower();
             using (SQLiteCommand com = new SQLiteCommand(con))
             {
-                com.CommandText = "SELECT b.id,b.title,b.year,b.author,b.publisher,s.name FROM books b INNER JOIN sections s ON b.section_id = s.id WHERE LOWER(b.title) LIKE '%" + src + "%' OR b.year LIKE '%" + src + "%' OR LOWER(b.author) LIKE '%" + src + "%' OR LOWER(b.publisher) LIKE '%" + src + "%' OR LOWER(s.name) LIKE '%" + src + "%' ORDER BY b.id;";
+                com.CommandText = "SELECT b.id,b.title,b.year,b.author,b.publisher,s.name,b.current_state FROM books b INNER JOIN sections s ON b.section_id = s.id WHERE LOWER(b.title) LIKE '%" + src + "%' OR b.year LIKE '%" + src + "%' OR LOWER(b.author) LIKE '%" + src + "%' OR LOWER(b.publisher) LIKE '%" + src + "%' OR LOWER(s.name) LIKE '%" + src + "%' ORDER BY b.id;";
                 SQLiteDataReader read = com.ExecuteReader();
                 if (read.HasRows == true)
                 {
@@ -61,7 +61,7 @@ namespace Library
                         string avtor = read.GetString(3);
                         string publisher = read.GetString(4);
                         string section = read.GetString(5);
-                        int state = 0; //read.GetInt32(6);
+                        int state = read.GetInt32(6);
                         knjige knjiga = new knjige(id, naslov, leto, avtor, publisher, section, state);
                         searchedbooks.Add(knjiga);
                     }
@@ -509,7 +509,7 @@ namespace Library
             con.Open();
             using (SQLiteCommand com = new SQLiteCommand(con))
             {
-                com.CommandText = "SELECT b.title, b.author, b.year, s.name FROM books b INNER JOIN sections s ON s.id=b.section_id INNER JOIN rents r ON r.book_id=b.id  WHERE (b.current_state=0) AND (r.user_id='" + id_u + "');";
+                com.CommandText = "SELECT b.title, b.author, b.year, s.name, b.id FROM books b INNER JOIN sections s ON s.id=b.section_id INNER JOIN rents r ON r.book_id=b.id  WHERE (b.current_state=0) AND (r.user_id='" + id_u + "');";
                 SQLiteDataReader read = com.ExecuteReader();
                 while (read.Read())
                 {
@@ -517,8 +517,9 @@ namespace Library
                     string avtor = read.GetString(1);
                     int leto = read.GetInt32(2);
                     string oddelek = read.GetString(3);
+                    int id = read.GetInt32(4);
 
-                    knjige knjiga = new knjige(naslov, avtor, leto, oddelek);
+                    knjige knjiga = new knjige(naslov, avtor, leto, oddelek, id);
 
                     knjige.Add(knjiga);
                 }

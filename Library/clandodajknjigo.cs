@@ -45,7 +45,7 @@ namespace Library
             if (e.ColumnIndex == 6)
             {
                 int id_b = Convert.ToInt32(ckgrid.Rows[e.RowIndex].Cells[0].Value);
-                bool ok = baza.RentABook(id, id_b, 1);
+                bool ok = baza.RentABook(id, id_b, 0);
                 if(ok)
                     MessageBox.Show("Uspešno izposodil knjigo");
                 else

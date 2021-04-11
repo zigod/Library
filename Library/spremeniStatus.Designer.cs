@@ -30,20 +30,21 @@ namespace Library
         private void InitializeComponent()
         {
             this.usersGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.iskanjeTextBox = new System.Windows.Forms.TextBox();
-            this.searchButton = new System.Windows.Forms.Button();
             this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Priimek = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enaslov = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.izposodi = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.iskanjeTextBox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // usersGridView
             // 
+            this.usersGridView.AllowUserToAddRows = false;
             this.usersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ime,
@@ -57,33 +58,6 @@ namespace Library
             this.usersGridView.Size = new System.Drawing.Size(597, 502);
             this.usersGridView.TabIndex = 0;
             this.usersGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersGridView_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Iskanje uporabnikov:";
-            // 
-            // iskanjeTextBox
-            // 
-            this.iskanjeTextBox.Location = new System.Drawing.Point(18, 51);
-            this.iskanjeTextBox.Name = "iskanjeTextBox";
-            this.iskanjeTextBox.Size = new System.Drawing.Size(216, 20);
-            this.iskanjeTextBox.TabIndex = 2;
-            // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(253, 51);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(108, 20);
-            this.searchButton.TabIndex = 3;
-            this.searchButton.Text = "Išči";
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // Ime
             // 
@@ -120,6 +94,33 @@ namespace Library
             this.id.HeaderText = "id";
             this.id.Name = "id";
             this.id.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(192, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Iskanje uporabnikov:";
+            // 
+            // iskanjeTextBox
+            // 
+            this.iskanjeTextBox.Location = new System.Drawing.Point(18, 51);
+            this.iskanjeTextBox.Name = "iskanjeTextBox";
+            this.iskanjeTextBox.Size = new System.Drawing.Size(216, 20);
+            this.iskanjeTextBox.TabIndex = 2;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(253, 51);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(108, 20);
+            this.searchButton.TabIndex = 3;
+            this.searchButton.Text = "Išči";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // spremeniStatus
             // 
