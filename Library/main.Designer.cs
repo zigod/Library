@@ -31,6 +31,7 @@ namespace Library
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.logout = new System.Windows.Forms.Button();
             this.statistika = new System.Windows.Forms.Button();
             this.izvozButton = new System.Windows.Forms.Button();
             this.izvozIme = new System.Windows.Forms.TextBox();
@@ -98,7 +99,6 @@ namespace Library
             this.ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ogl = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.logout = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.knjigegrid)).BeginInit();
@@ -112,13 +112,14 @@ namespace Library
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(3, 2);
+            this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1535, 751);
+            this.tabControl1.Size = new System.Drawing.Size(1258, 740);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -144,13 +145,25 @@ namespace Library
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1527, 725);
+            this.tabPage1.Size = new System.Drawing.Size(1250, 714);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Izpis";
             // 
+            // logout
+            // 
+            this.logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.logout.Location = new System.Drawing.Point(1048, 27);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(198, 81);
+            this.logout.TabIndex = 1;
+            this.logout.Text = "Odjava";
+            this.logout.UseVisualStyleBackColor = true;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
+            // 
             // statistika
             // 
-            this.statistika.Location = new System.Drawing.Point(962, 643);
+            this.statistika.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.statistika.Location = new System.Drawing.Point(958, 641);
             this.statistika.Name = "statistika";
             this.statistika.Size = new System.Drawing.Size(284, 38);
             this.statistika.TabIndex = 12;
@@ -186,7 +199,8 @@ namespace Library
             // 
             // allizpis
             // 
-            this.allizpis.Location = new System.Drawing.Point(638, 643);
+            this.allizpis.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.allizpis.Location = new System.Drawing.Point(634, 641);
             this.allizpis.Name = "allizpis";
             this.allizpis.Size = new System.Drawing.Size(284, 38);
             this.allizpis.TabIndex = 11;
@@ -196,7 +210,8 @@ namespace Library
             // 
             // prostbutton
             // 
-            this.prostbutton.Location = new System.Drawing.Point(318, 643);
+            this.prostbutton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.prostbutton.Location = new System.Drawing.Point(314, 641);
             this.prostbutton.Name = "prostbutton";
             this.prostbutton.Size = new System.Drawing.Size(284, 38);
             this.prostbutton.TabIndex = 10;
@@ -206,7 +221,8 @@ namespace Library
             // 
             // izpobutton
             // 
-            this.izpobutton.Location = new System.Drawing.Point(6, 643);
+            this.izpobutton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.izpobutton.Location = new System.Drawing.Point(11, 641);
             this.izpobutton.Name = "izpobutton";
             this.izpobutton.Size = new System.Drawing.Size(284, 38);
             this.izpobutton.TabIndex = 9;
@@ -300,6 +316,7 @@ namespace Library
             // knjigegrid
             // 
             this.knjigegrid.AllowUserToAddRows = false;
+            this.knjigegrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.knjigegrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.knjigegrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.knjigegrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -331,7 +348,6 @@ namespace Library
             // 
             this.avtor.HeaderText = "Avtor";
             this.avtor.Name = "avtor";
-            this.avtor.Width = 250;
             // 
             // let
             // 
@@ -342,13 +358,11 @@ namespace Library
             // 
             this.sec.HeaderText = "Oddelek";
             this.sec.Name = "sec";
-            this.sec.Width = 200;
             // 
             // publ
             // 
             this.publ.HeaderText = "Založnik";
             this.publ.Name = "publ";
-            this.publ.Width = 250;
             // 
             // oglej
             // 
@@ -786,22 +800,13 @@ namespace Library
             this.id.Name = "id";
             this.id.Visible = false;
             // 
-            // logout
-            // 
-            this.logout.Location = new System.Drawing.Point(1048, 27);
-            this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(198, 81);
-            this.logout.TabIndex = 1;
-            this.logout.Text = "Odjava";
-            this.logout.UseVisualStyleBackColor = true;
-            this.logout.Click += new System.EventHandler(this.logout_Click);
-            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1742, 753);
+            this.ClientSize = new System.Drawing.Size(1259, 742);
             this.Controls.Add(this.tabControl1);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "main";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
