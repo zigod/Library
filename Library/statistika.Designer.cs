@@ -120,6 +120,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
+            this.MaximumSize = new System.Drawing.Size(816, 529);
+            this.MinimumSize = new System.Drawing.Size(816, 529);
             this.Name = "statistika";
             this.Text = "statistika";
             this.ResumeLayout(false);

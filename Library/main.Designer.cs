@@ -112,7 +112,9 @@ namespace Library
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -162,10 +164,10 @@ namespace Library
             // 
             // statistika
             // 
-            this.statistika.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.statistika.Location = new System.Drawing.Point(958, 641);
+            this.statistika.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.statistika.Location = new System.Drawing.Point(1005, 649);
             this.statistika.Name = "statistika";
-            this.statistika.Size = new System.Drawing.Size(284, 38);
+            this.statistika.Size = new System.Drawing.Size(226, 38);
             this.statistika.TabIndex = 12;
             this.statistika.Text = "Statistika";
             this.statistika.UseVisualStyleBackColor = true;
@@ -173,6 +175,7 @@ namespace Library
             // 
             // izvozButton
             // 
+            this.izvozButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.izvozButton.Location = new System.Drawing.Point(829, 69);
             this.izvozButton.Name = "izvozButton";
             this.izvozButton.Size = new System.Drawing.Size(147, 23);
@@ -183,6 +186,7 @@ namespace Library
             // 
             // izvozIme
             // 
+            this.izvozIme.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.izvozIme.Location = new System.Drawing.Point(829, 43);
             this.izvozIme.Name = "izvozIme";
             this.izvozIme.Size = new System.Drawing.Size(147, 20);
@@ -190,6 +194,7 @@ namespace Library
             // 
             // label18
             // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(828, 25);
             this.label18.Name = "label18";
@@ -199,21 +204,21 @@ namespace Library
             // 
             // allizpis
             // 
-            this.allizpis.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.allizpis.Location = new System.Drawing.Point(634, 641);
+            this.allizpis.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.allizpis.Location = new System.Drawing.Point(660, 649);
             this.allizpis.Name = "allizpis";
-            this.allizpis.Size = new System.Drawing.Size(284, 38);
+            this.allizpis.Size = new System.Drawing.Size(226, 38);
             this.allizpis.TabIndex = 11;
-            this.allizpis.Text = "Izpisi vse";
+            this.allizpis.Text = "Izpiši vse";
             this.allizpis.UseVisualStyleBackColor = true;
             this.allizpis.Click += new System.EventHandler(this.allizpis_Click);
             // 
             // prostbutton
             // 
-            this.prostbutton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.prostbutton.Location = new System.Drawing.Point(314, 641);
+            this.prostbutton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.prostbutton.Location = new System.Drawing.Point(338, 649);
             this.prostbutton.Name = "prostbutton";
-            this.prostbutton.Size = new System.Drawing.Size(284, 38);
+            this.prostbutton.Size = new System.Drawing.Size(226, 38);
             this.prostbutton.TabIndex = 10;
             this.prostbutton.Text = "Prikaz samo prostih knjig";
             this.prostbutton.UseVisualStyleBackColor = true;
@@ -221,12 +226,12 @@ namespace Library
             // 
             // izpobutton
             // 
-            this.izpobutton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.izpobutton.Location = new System.Drawing.Point(11, 641);
+            this.izpobutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.izpobutton.Location = new System.Drawing.Point(23, 649);
             this.izpobutton.Name = "izpobutton";
-            this.izpobutton.Size = new System.Drawing.Size(284, 38);
+            this.izpobutton.Size = new System.Drawing.Size(226, 38);
             this.izpobutton.TabIndex = 9;
-            this.izpobutton.Text = "Prikaz samo Izposojenih knjig";
+            this.izpobutton.Text = "Prikaz samo izposojenih knjig";
             this.izpobutton.UseVisualStyleBackColor = true;
             this.izpobutton.Click += new System.EventHandler(this.izpobutton_Click);
             // 
@@ -234,14 +239,15 @@ namespace Library
             // 
             this.poc.Location = new System.Drawing.Point(6, 69);
             this.poc.Name = "poc";
-            this.poc.Size = new System.Drawing.Size(75, 23);
+            this.poc.Size = new System.Drawing.Size(121, 23);
             this.poc.TabIndex = 8;
-            this.poc.Text = "Pocisti iskanje";
+            this.poc.Text = "Počisti iskanje";
             this.poc.UseVisualStyleBackColor = true;
             this.poc.Click += new System.EventHandler(this.poc_Click);
             // 
             // orderbutton
             // 
+            this.orderbutton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.orderbutton.Location = new System.Drawing.Point(536, 78);
             this.orderbutton.Name = "orderbutton";
             this.orderbutton.Size = new System.Drawing.Size(167, 30);
@@ -252,6 +258,7 @@ namespace Library
             // 
             // descbutton
             // 
+            this.descbutton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.descbutton.AutoSize = true;
             this.descbutton.Location = new System.Drawing.Point(676, 42);
             this.descbutton.Name = "descbutton";
@@ -262,6 +269,7 @@ namespace Library
             // 
             // ascbutton
             // 
+            this.ascbutton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ascbutton.AutoSize = true;
             this.ascbutton.Checked = true;
             this.ascbutton.Location = new System.Drawing.Point(676, 19);
@@ -274,6 +282,7 @@ namespace Library
             // 
             // urcombo
             // 
+            this.urcombo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.urcombo.FormattingEnabled = true;
             this.urcombo.Items.AddRange(new object[] {
             "Inventarna st",
@@ -289,6 +298,7 @@ namespace Library
             // 
             // label17
             // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(465, 30);
             this.label17.Name = "label17";
@@ -302,7 +312,7 @@ namespace Library
             this.searchbutton.Name = "searchbutton";
             this.searchbutton.Size = new System.Drawing.Size(58, 20);
             this.searchbutton.TabIndex = 2;
-            this.searchbutton.Text = "isci";
+            this.searchbutton.Text = "Išči";
             this.searchbutton.UseVisualStyleBackColor = true;
             this.searchbutton.Click += new System.EventHandler(this.searchbutton_Click);
             // 
@@ -316,6 +326,9 @@ namespace Library
             // knjigegrid
             // 
             this.knjigegrid.AllowUserToAddRows = false;
+            this.knjigegrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.knjigegrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.knjigegrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.knjigegrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -382,7 +395,7 @@ namespace Library
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1527, 725);
+            this.tabPage2.Size = new System.Drawing.Size(1250, 714);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Dodajanje";
             // 
@@ -586,6 +599,9 @@ namespace Library
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(430, 280);
             this.label16.Name = "label16";
@@ -597,6 +613,9 @@ namespace Library
             // 
             // zalozbaBox
             // 
+            this.zalozbaBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.zalozbaBox.Location = new System.Drawing.Point(501, 277);
             this.zalozbaBox.Name = "zalozbaBox";
             this.zalozbaBox.Size = new System.Drawing.Size(259, 23);
@@ -605,6 +624,9 @@ namespace Library
             // 
             // dodajKnjigoButton
             // 
+            this.dodajKnjigoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dodajKnjigoButton.Location = new System.Drawing.Point(501, 408);
             this.dodajKnjigoButton.Name = "dodajKnjigoButton";
             this.dodajKnjigoButton.Size = new System.Drawing.Size(259, 34);
@@ -615,6 +637,9 @@ namespace Library
             // 
             // oddelekComboBox
             // 
+            this.oddelekComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.oddelekComboBox.FormattingEnabled = true;
             this.oddelekComboBox.Location = new System.Drawing.Point(501, 189);
             this.oddelekComboBox.Name = "oddelekComboBox";
@@ -624,6 +649,9 @@ namespace Library
             // 
             // pridobitevComboBox
             // 
+            this.pridobitevComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pridobitevComboBox.FormattingEnabled = true;
             this.pridobitevComboBox.Items.AddRange(new object[] {
             "Nakup",
@@ -637,6 +665,9 @@ namespace Library
             // 
             // label15
             // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(495, 68);
@@ -648,6 +679,9 @@ namespace Library
             // 
             // opombeTextBox
             // 
+            this.opombeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.opombeTextBox.Location = new System.Drawing.Point(501, 306);
             this.opombeTextBox.Name = "opombeTextBox";
             this.opombeTextBox.Size = new System.Drawing.Size(259, 96);
@@ -657,6 +691,9 @@ namespace Library
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(429, 309);
             this.label14.Name = "label14";
@@ -667,6 +704,9 @@ namespace Library
             // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(450, 251);
             this.label13.Name = "label13";
@@ -677,6 +717,9 @@ namespace Library
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(455, 222);
             this.label12.Name = "label12";
@@ -687,6 +730,9 @@ namespace Library
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(430, 192);
             this.label11.Name = "label11";
@@ -697,6 +743,9 @@ namespace Library
             // 
             // label10
             // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(381, 162);
             this.label10.Name = "label10";
@@ -707,6 +756,9 @@ namespace Library
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(440, 133);
             this.label9.Name = "label9";
@@ -717,6 +769,9 @@ namespace Library
             // 
             // avtorTextBox
             // 
+            this.avtorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.avtorTextBox.Location = new System.Drawing.Point(501, 248);
             this.avtorTextBox.Name = "avtorTextBox";
             this.avtorTextBox.Size = new System.Drawing.Size(259, 23);
@@ -725,6 +780,9 @@ namespace Library
             // 
             // letoTextbox
             // 
+            this.letoTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.letoTextbox.Location = new System.Drawing.Point(501, 219);
             this.letoTextbox.Name = "letoTextbox";
             this.letoTextbox.Size = new System.Drawing.Size(82, 23);
@@ -733,6 +791,9 @@ namespace Library
             // 
             // naslovKnjigeTextBox
             // 
+            this.naslovKnjigeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.naslovKnjigeTextBox.Location = new System.Drawing.Point(501, 130);
             this.naslovKnjigeTextBox.Name = "naslovKnjigeTextBox";
             this.naslovKnjigeTextBox.Size = new System.Drawing.Size(259, 23);
@@ -745,13 +806,17 @@ namespace Library
             this.tabPage3.Controls.Add(this.usersgrid);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1527, 725);
+            this.tabPage3.Size = new System.Drawing.Size(1250, 714);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Člani";
             // 
             // usersgrid
             // 
             this.usersgrid.AllowUserToAddRows = false;
+            this.usersgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.usersgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.usersgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usersgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,

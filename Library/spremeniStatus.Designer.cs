@@ -45,6 +45,7 @@ namespace Library
             // usersGridView
             // 
             this.usersGridView.AllowUserToAddRows = false;
+            this.usersGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.usersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ime,
@@ -82,7 +83,6 @@ namespace Library
             this.enaslov.HeaderText = "E-naslov";
             this.enaslov.Name = "enaslov";
             this.enaslov.ReadOnly = true;
-            this.enaslov.Width = 150;
             // 
             // izposodi
             // 
@@ -131,6 +131,8 @@ namespace Library
             this.Controls.Add(this.iskanjeTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.usersGridView);
+            this.MaximumSize = new System.Drawing.Size(635, 647);
+            this.MinimumSize = new System.Drawing.Size(635, 647);
             this.Name = "spremeniStatus";
             this.Text = "spremeniStatus";
             ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).EndInit();

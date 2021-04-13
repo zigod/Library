@@ -46,6 +46,7 @@
             // ckgrid
             // 
             this.ckgrid.AllowUserToAddRows = false;
+            this.ckgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ckgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ckgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ckgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -76,7 +77,6 @@
             // 
             this.avtor.HeaderText = "Avtor";
             this.avtor.Name = "avtor";
-            this.avtor.Width = 250;
             // 
             // let
             // 
@@ -87,13 +87,11 @@
             // 
             this.sec.HeaderText = "Sections";
             this.sec.Name = "sec";
-            this.sec.Width = 200;
             // 
             // publ
             // 
             this.publ.HeaderText = "Publisher";
             this.publ.Name = "publ";
-            this.publ.Width = 250;
             // 
             // reserve
             // 
@@ -146,6 +144,7 @@
             this.Controls.Add(this.searchbutton);
             this.Controls.Add(this.searchbar);
             this.Controls.Add(this.ckgrid);
+            this.MaximumSize = new System.Drawing.Size(1195, 664);
             this.Name = "clandodajknjigo";
             this.Text = "clandodajknjigo";
             ((System.ComponentModel.ISupportInitialize)(this.ckgrid)).EndInit();

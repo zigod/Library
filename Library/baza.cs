@@ -557,7 +557,7 @@ namespace Library
                 SQLiteDataReader read = com.ExecuteReader();
                 while (read.Read())
                 {
-                    toplist.Add(read.GetString(1) + " " + read.GetString(2));
+                    toplist.Add(read.GetString(1) + " " + read.GetString(2) + "|" + read.GetInt32(0));
                 }
             }
             con.Close();

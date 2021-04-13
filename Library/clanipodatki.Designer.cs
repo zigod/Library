@@ -50,8 +50,8 @@
             this.leto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oddelek = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrni = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dodknjigobutton = new System.Windows.Forms.Button();
             this.ajdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dodknjigobutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.vrnitevGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,6 +209,7 @@
             // vrnitevGrid
             // 
             this.vrnitevGrid.AllowUserToAddRows = false;
+            this.vrnitevGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vrnitevGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vrnitevGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.title,
@@ -247,17 +248,6 @@
             // 
             this.vrni.HeaderText = "Vrnitev knjig";
             this.vrni.Name = "vrni";
-            this.vrni.Width = 200;
-            // 
-            // dodknjigobutton
-            // 
-            this.dodknjigobutton.Location = new System.Drawing.Point(514, 391);
-            this.dodknjigobutton.Name = "dodknjigobutton";
-            this.dodknjigobutton.Size = new System.Drawing.Size(163, 41);
-            this.dodknjigobutton.TabIndex = 18;
-            this.dodknjigobutton.Text = "Izposodi knjigo";
-            this.dodknjigobutton.UseVisualStyleBackColor = true;
-            this.dodknjigobutton.Click += new System.EventHandler(this.dodknjigobutton_Click);
             // 
             // ajdi
             // 
@@ -266,11 +256,21 @@
             this.ajdi.ReadOnly = true;
             this.ajdi.Visible = false;
             // 
+            // dodknjigobutton
+            // 
+            this.dodknjigobutton.Location = new System.Drawing.Point(514, 391);
+            this.dodknjigobutton.Name = "dodknjigobutton";
+            this.dodknjigobutton.Size = new System.Drawing.Size(163, 41);
+            this.dodknjigobutton.TabIndex = 18;
+            this.dodknjigobutton.Text = "Izposodi knjigo temu članu";
+            this.dodknjigobutton.UseVisualStyleBackColor = true;
+            this.dodknjigobutton.Click += new System.EventHandler(this.dodknjigobutton_Click);
+            // 
             // clanipodatki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 916);
+            this.ClientSize = new System.Drawing.Size(788, 749);
             this.Controls.Add(this.dodknjigobutton);
             this.Controls.Add(this.vrnitevGrid);
             this.Controls.Add(this.cancel_button);
@@ -289,6 +289,8 @@
             this.Controls.Add(this.teltext);
             this.Controls.Add(this.nasltext);
             this.Controls.Add(this.imetext);
+            this.MaximumSize = new System.Drawing.Size(804, 788);
+            this.MinimumSize = new System.Drawing.Size(804, 726);
             this.Name = "clanipodatki";
             this.Text = "clanipodatki";
             ((System.ComponentModel.ISupportInitialize)(this.vrnitevGrid)).EndInit();

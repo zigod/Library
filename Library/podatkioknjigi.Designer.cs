@@ -219,7 +219,7 @@
             this.spremeniStatusButton.Name = "spremeniStatusButton";
             this.spremeniStatusButton.Size = new System.Drawing.Size(128, 83);
             this.spremeniStatusButton.TabIndex = 20;
-            this.spremeniStatusButton.Text = "Knjigo je nekdo sposodil";
+            this.spremeniStatusButton.Text = "Sposodi knjigo";
             this.spremeniStatusButton.UseVisualStyleBackColor = true;
             this.spremeniStatusButton.Click += new System.EventHandler(this.spremeniStatusButton_Click);
             // 
@@ -238,7 +238,7 @@
             this.vrnibutton.Name = "vrnibutton";
             this.vrnibutton.Size = new System.Drawing.Size(128, 83);
             this.vrnibutton.TabIndex = 22;
-            this.vrnibutton.Text = "Knjiga je bila vrnjena";
+            this.vrnibutton.Text = "Vrni knjigo";
             this.vrnibutton.UseVisualStyleBackColor = true;
             this.vrnibutton.Click += new System.EventHandler(this.vrnibutton_Click);
             // 
@@ -280,6 +280,8 @@
             this.Controls.Add(this.nastext);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.invtext);
+            this.MaximumSize = new System.Drawing.Size(816, 700);
+            this.MinimumSize = new System.Drawing.Size(816, 700);
             this.Name = "podatkioknjigi";
             this.Text = "podatkioknjigi";
             this.ResumeLayout(false);

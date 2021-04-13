@@ -39,11 +39,10 @@ namespace Library
             List<string> toplist = baza.TopUporabniki(zacdat, kondat);
             foreach(string x in toplist)
             {
-                toplistbox.Items.Add(st.ToString() + ". " + x);
+                string[] lol = x.Split('|');
+                toplistbox.Items.Add(st.ToString() + ". " + lol[0] + " (" + lol[1] + ")");
                 st++;
             }
         }
-
-      
     }
 }
