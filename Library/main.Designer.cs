@@ -401,6 +401,9 @@ namespace Library
             // 
             // dodajanjeTab
             // 
+            this.dodajanjeTab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dodajanjeTab.Controls.Add(this.dodajanjeClanovPage);
             this.dodajanjeTab.Controls.Add(this.tabPage5);
             this.dodajanjeTab.Location = new System.Drawing.Point(3, 3);
@@ -438,6 +441,7 @@ namespace Library
             // 
             // dodajClanaButton
             // 
+            this.dodajClanaButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dodajClanaButton.Location = new System.Drawing.Point(475, 406);
             this.dodajClanaButton.Name = "dodajClanaButton";
             this.dodajClanaButton.Size = new System.Drawing.Size(323, 50);
@@ -448,6 +452,7 @@ namespace Library
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(472, 361);
@@ -458,6 +463,7 @@ namespace Library
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(484, 66);
@@ -468,6 +474,7 @@ namespace Library
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(403, 265);
@@ -478,6 +485,7 @@ namespace Library
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(423, 238);
@@ -488,6 +496,7 @@ namespace Library
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(414, 211);
@@ -498,6 +507,7 @@ namespace Library
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(404, 184);
@@ -508,6 +518,7 @@ namespace Library
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(406, 158);
@@ -518,6 +529,7 @@ namespace Library
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(430, 132);
@@ -528,6 +540,7 @@ namespace Library
             // 
             // opombeBox
             // 
+            this.opombeBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.opombeBox.Location = new System.Drawing.Point(475, 262);
             this.opombeBox.Name = "opombeBox";
             this.opombeBox.Size = new System.Drawing.Size(323, 96);
@@ -536,6 +549,7 @@ namespace Library
             // 
             // gmailBox
             // 
+            this.gmailBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gmailBox.Location = new System.Drawing.Point(475, 235);
             this.gmailBox.Name = "gmailBox";
             this.gmailBox.Size = new System.Drawing.Size(323, 23);
@@ -543,6 +557,7 @@ namespace Library
             // 
             // naslovBox
             // 
+            this.naslovBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.naslovBox.Location = new System.Drawing.Point(475, 208);
             this.naslovBox.Name = "naslovBox";
             this.naslovBox.Size = new System.Drawing.Size(323, 23);
@@ -550,6 +565,7 @@ namespace Library
             // 
             // telefonBox
             // 
+            this.telefonBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.telefonBox.Location = new System.Drawing.Point(475, 181);
             this.telefonBox.Name = "telefonBox";
             this.telefonBox.Size = new System.Drawing.Size(323, 23);
@@ -557,6 +573,7 @@ namespace Library
             // 
             // priimekBox
             // 
+            this.priimekBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.priimekBox.Location = new System.Drawing.Point(475, 155);
             this.priimekBox.Name = "priimekBox";
             this.priimekBox.Size = new System.Drawing.Size(323, 23);
@@ -564,6 +581,7 @@ namespace Library
             // 
             // imeBox
             // 
+            this.imeBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.imeBox.Location = new System.Drawing.Point(475, 129);
             this.imeBox.Name = "imeBox";
             this.imeBox.Size = new System.Drawing.Size(323, 23);
@@ -599,9 +617,7 @@ namespace Library
             // 
             // label16
             // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(430, 280);
             this.label16.Name = "label16";
@@ -613,9 +629,7 @@ namespace Library
             // 
             // zalozbaBox
             // 
-            this.zalozbaBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.zalozbaBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.zalozbaBox.Location = new System.Drawing.Point(501, 277);
             this.zalozbaBox.Name = "zalozbaBox";
             this.zalozbaBox.Size = new System.Drawing.Size(259, 23);
@@ -624,9 +638,7 @@ namespace Library
             // 
             // dodajKnjigoButton
             // 
-            this.dodajKnjigoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dodajKnjigoButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dodajKnjigoButton.Location = new System.Drawing.Point(501, 408);
             this.dodajKnjigoButton.Name = "dodajKnjigoButton";
             this.dodajKnjigoButton.Size = new System.Drawing.Size(259, 34);
@@ -637,9 +649,7 @@ namespace Library
             // 
             // oddelekComboBox
             // 
-            this.oddelekComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.oddelekComboBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.oddelekComboBox.FormattingEnabled = true;
             this.oddelekComboBox.Location = new System.Drawing.Point(501, 189);
             this.oddelekComboBox.Name = "oddelekComboBox";
@@ -649,9 +659,7 @@ namespace Library
             // 
             // pridobitevComboBox
             // 
-            this.pridobitevComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pridobitevComboBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pridobitevComboBox.FormattingEnabled = true;
             this.pridobitevComboBox.Items.AddRange(new object[] {
             "Nakup",
@@ -665,9 +673,7 @@ namespace Library
             // 
             // label15
             // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(495, 68);
@@ -679,9 +685,7 @@ namespace Library
             // 
             // opombeTextBox
             // 
-            this.opombeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.opombeTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.opombeTextBox.Location = new System.Drawing.Point(501, 306);
             this.opombeTextBox.Name = "opombeTextBox";
             this.opombeTextBox.Size = new System.Drawing.Size(259, 96);
@@ -691,9 +695,7 @@ namespace Library
             // 
             // label14
             // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(429, 309);
             this.label14.Name = "label14";
@@ -704,9 +706,7 @@ namespace Library
             // 
             // label13
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(450, 251);
             this.label13.Name = "label13";
@@ -717,9 +717,7 @@ namespace Library
             // 
             // label12
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(455, 222);
             this.label12.Name = "label12";
@@ -730,9 +728,7 @@ namespace Library
             // 
             // label11
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(430, 192);
             this.label11.Name = "label11";
@@ -743,9 +739,7 @@ namespace Library
             // 
             // label10
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(381, 162);
             this.label10.Name = "label10";
@@ -756,9 +750,7 @@ namespace Library
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(440, 133);
             this.label9.Name = "label9";
@@ -769,9 +761,7 @@ namespace Library
             // 
             // avtorTextBox
             // 
-            this.avtorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.avtorTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.avtorTextBox.Location = new System.Drawing.Point(501, 248);
             this.avtorTextBox.Name = "avtorTextBox";
             this.avtorTextBox.Size = new System.Drawing.Size(259, 23);
@@ -780,9 +770,7 @@ namespace Library
             // 
             // letoTextbox
             // 
-            this.letoTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.letoTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.letoTextbox.Location = new System.Drawing.Point(501, 219);
             this.letoTextbox.Name = "letoTextbox";
             this.letoTextbox.Size = new System.Drawing.Size(82, 23);
@@ -791,9 +779,7 @@ namespace Library
             // 
             // naslovKnjigeTextBox
             // 
-            this.naslovKnjigeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.naslovKnjigeTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.naslovKnjigeTextBox.Location = new System.Drawing.Point(501, 130);
             this.naslovKnjigeTextBox.Name = "naslovKnjigeTextBox";
             this.naslovKnjigeTextBox.Size = new System.Drawing.Size(259, 23);

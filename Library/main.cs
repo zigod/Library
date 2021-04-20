@@ -34,7 +34,13 @@ namespace Library
                 oddelekComboBox.Items.Add(x);
             }
         }
-       
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            Application.ExitThread();
+            Application.Exit();
+        }
+
 
         private void polnjenje()
         {
@@ -98,8 +104,7 @@ namespace Library
             {
                 int id = Convert.ToInt32(usersgrid.Rows[e.RowIndex].Cells[5].Value);
                 clanipodatki cp = new clanipodatki(id);
-                cp.Show();
-                this.Close();
+                cp.ShowDialog();
             }
         }
 
@@ -111,8 +116,8 @@ namespace Library
             {
                 int id = Convert.ToInt32(knjigegrid.Rows[e.RowIndex].Cells[0].Value);
                 podatkioknjigi pod = new podatkioknjigi(id);
-                pod.Show();
-                this.Close();
+                pod.ShowDialog();
+
             }
         }
 
