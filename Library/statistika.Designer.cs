@@ -123,7 +123,7 @@
             this.MaximumSize = new System.Drawing.Size(816, 529);
             this.MinimumSize = new System.Drawing.Size(816, 529);
             this.Name = "statistika";
-            this.Text = "statistika";
+            this.Text = "Statistika";
             this.ResumeLayout(false);
             this.PerformLayout();
 

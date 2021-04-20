@@ -283,7 +283,7 @@
             this.MaximumSize = new System.Drawing.Size(816, 700);
             this.MinimumSize = new System.Drawing.Size(816, 700);
             this.Name = "podatkioknjigi";
-            this.Text = "podatkioknjigi";
+            this.Text = "Podatki o knjigi";
             this.ResumeLayout(false);
             this.PerformLayout();
 

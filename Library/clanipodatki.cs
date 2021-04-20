@@ -41,8 +41,6 @@ namespace Library
         }
         private void nazajbutton_Click(object sender, EventArgs e)
         {
-            main ma = new main();
-            ma.Show(); 
             this.Close();
         }
 
@@ -120,6 +118,11 @@ namespace Library
                 }
             }
             polnjenje();
+
+        }
+
+        private void clanipodatki_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -66,7 +66,7 @@
             // nasltext
             // 
             this.nasltext.Enabled = false;
-            this.nasltext.Location = new System.Drawing.Point(98, 249);
+            this.nasltext.Location = new System.Drawing.Point(98, 215);
             this.nasltext.Name = "nasltext";
             this.nasltext.Size = new System.Drawing.Size(400, 20);
             this.nasltext.TabIndex = 1;
@@ -74,7 +74,7 @@
             // teltext
             // 
             this.teltext.Enabled = false;
-            this.teltext.Location = new System.Drawing.Point(98, 187);
+            this.teltext.Location = new System.Drawing.Point(98, 159);
             this.teltext.Name = "teltext";
             this.teltext.Size = new System.Drawing.Size(400, 20);
             this.teltext.TabIndex = 2;
@@ -82,7 +82,7 @@
             // pritext
             // 
             this.pritext.Enabled = false;
-            this.pritext.Location = new System.Drawing.Point(98, 117);
+            this.pritext.Location = new System.Drawing.Point(98, 100);
             this.pritext.Name = "pritext";
             this.pritext.Size = new System.Drawing.Size(400, 20);
             this.pritext.TabIndex = 3;
@@ -90,7 +90,7 @@
             // emailtext
             // 
             this.emailtext.Enabled = false;
-            this.emailtext.Location = new System.Drawing.Point(98, 314);
+            this.emailtext.Location = new System.Drawing.Point(95, 270);
             this.emailtext.Name = "emailtext";
             this.emailtext.Size = new System.Drawing.Size(400, 20);
             this.emailtext.TabIndex = 4;
@@ -98,7 +98,7 @@
             // opombetext
             // 
             this.opombetext.Enabled = false;
-            this.opombetext.Location = new System.Drawing.Point(98, 391);
+            this.opombetext.Location = new System.Drawing.Point(95, 328);
             this.opombetext.Name = "opombetext";
             this.opombetext.Size = new System.Drawing.Size(400, 121);
             this.opombetext.TabIndex = 5;
@@ -118,7 +118,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(94, 94);
+            this.label2.Location = new System.Drawing.Point(94, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 20);
             this.label2.TabIndex = 7;
@@ -128,7 +128,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(94, 164);
+            this.label3.Location = new System.Drawing.Point(94, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 20);
             this.label3.TabIndex = 8;
@@ -138,7 +138,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(94, 226);
+            this.label4.Location = new System.Drawing.Point(94, 192);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 20);
             this.label4.TabIndex = 9;
@@ -148,7 +148,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(94, 291);
+            this.label5.Location = new System.Drawing.Point(91, 247);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 20);
             this.label5.TabIndex = 10;
@@ -158,7 +158,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(94, 368);
+            this.label6.Location = new System.Drawing.Point(91, 305);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 20);
             this.label6.TabIndex = 11;
@@ -218,7 +218,7 @@
             this.oddelek,
             this.vrni,
             this.ajdi});
-            this.vrnitevGrid.Location = new System.Drawing.Point(98, 600);
+            this.vrnitevGrid.Location = new System.Drawing.Point(95, 468);
             this.vrnitevGrid.Name = "vrnitevGrid";
             this.vrnitevGrid.Size = new System.Drawing.Size(645, 208);
             this.vrnitevGrid.TabIndex = 17;
@@ -258,7 +258,7 @@
             // 
             // dodknjigobutton
             // 
-            this.dodknjigobutton.Location = new System.Drawing.Point(514, 391);
+            this.dodknjigobutton.Location = new System.Drawing.Point(544, 317);
             this.dodknjigobutton.Name = "dodknjigobutton";
             this.dodknjigobutton.Size = new System.Drawing.Size(163, 41);
             this.dodknjigobutton.TabIndex = 18;
@@ -270,7 +270,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 749);
+            this.ClientSize = new System.Drawing.Size(788, 687);
             this.Controls.Add(this.dodknjigobutton);
             this.Controls.Add(this.vrnitevGrid);
             this.Controls.Add(this.cancel_button);
@@ -292,7 +292,8 @@
             this.MaximumSize = new System.Drawing.Size(804, 788);
             this.MinimumSize = new System.Drawing.Size(804, 726);
             this.Name = "clanipodatki";
-            this.Text = "clanipodatki";
+            this.Text = "Podatki o članu";
+            this.Load += new System.EventHandler(this.clanipodatki_Load);
             ((System.ComponentModel.ISupportInitialize)(this.vrnitevGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

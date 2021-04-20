@@ -146,7 +146,7 @@
             this.Controls.Add(this.ckgrid);
             this.MaximumSize = new System.Drawing.Size(1195, 664);
             this.Name = "clandodajknjigo";
-            this.Text = "clandodajknjigo";
+            this.Text = "Dodaj knjigo članu";
             ((System.ComponentModel.ISupportInitialize)(this.ckgrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

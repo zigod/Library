@@ -76,8 +76,6 @@ namespace Library
 
         private void nazajbutton_Click(object sender, EventArgs e)
         {
-            main ma = new main();
-            ma.Show();
             this.Close();
         }
     }

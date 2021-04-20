@@ -35,8 +35,6 @@ namespace Library
 
         private void nazajbutton_Click(object sender, EventArgs e)
         {
-            clanipodatki cp = new clanipodatki(id);
-            cp.Show();
             this.Close();
         }
 

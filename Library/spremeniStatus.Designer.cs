@@ -134,7 +134,7 @@ namespace Library
             this.MaximumSize = new System.Drawing.Size(635, 647);
             this.MinimumSize = new System.Drawing.Size(635, 647);
             this.Name = "spremeniStatus";
-            this.Text = "spremeniStatus";
+            this.Text = "Izposodi knjigo uporabniku";
             ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

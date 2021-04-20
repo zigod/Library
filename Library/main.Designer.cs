@@ -248,7 +248,7 @@ namespace Library
             // orderbutton
             // 
             this.orderbutton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.orderbutton.Location = new System.Drawing.Point(536, 78);
+            this.orderbutton.Location = new System.Drawing.Point(507, 79);
             this.orderbutton.Name = "orderbutton";
             this.orderbutton.Size = new System.Drawing.Size(167, 30);
             this.orderbutton.TabIndex = 7;
@@ -260,7 +260,7 @@ namespace Library
             // 
             this.descbutton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.descbutton.AutoSize = true;
-            this.descbutton.Location = new System.Drawing.Point(676, 42);
+            this.descbutton.Location = new System.Drawing.Point(647, 43);
             this.descbutton.Name = "descbutton";
             this.descbutton.Size = new System.Drawing.Size(70, 17);
             this.descbutton.TabIndex = 6;
@@ -272,7 +272,7 @@ namespace Library
             this.ascbutton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ascbutton.AutoSize = true;
             this.ascbutton.Checked = true;
-            this.ascbutton.Location = new System.Drawing.Point(676, 19);
+            this.ascbutton.Location = new System.Drawing.Point(647, 20);
             this.ascbutton.Name = "ascbutton";
             this.ascbutton.Size = new System.Drawing.Size(85, 17);
             this.ascbutton.TabIndex = 5;
@@ -291,7 +291,7 @@ namespace Library
             "Leto",
             "Sections",
             "Publisher"});
-            this.urcombo.Location = new System.Drawing.Point(536, 26);
+            this.urcombo.Location = new System.Drawing.Point(507, 27);
             this.urcombo.Name = "urcombo";
             this.urcombo.Size = new System.Drawing.Size(121, 21);
             this.urcombo.TabIndex = 4;
@@ -300,7 +300,7 @@ namespace Library
             // 
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(465, 30);
+            this.label17.Location = new System.Drawing.Point(436, 31);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(50, 13);
             this.label17.TabIndex = 3;
@@ -308,7 +308,7 @@ namespace Library
             // 
             // searchbutton
             // 
-            this.searchbutton.Location = new System.Drawing.Point(354, 27);
+            this.searchbutton.Location = new System.Drawing.Point(205, 27);
             this.searchbutton.Name = "searchbutton";
             this.searchbutton.Size = new System.Drawing.Size(58, 20);
             this.searchbutton.TabIndex = 2;
@@ -320,7 +320,7 @@ namespace Library
             // 
             this.searchbar.Location = new System.Drawing.Point(6, 27);
             this.searchbar.Name = "searchbar";
-            this.searchbar.Size = new System.Drawing.Size(342, 20);
+            this.searchbar.Size = new System.Drawing.Size(193, 20);
             this.searchbar.TabIndex = 1;
             // 
             // knjigegrid
@@ -859,7 +859,7 @@ namespace Library
             this.Controls.Add(this.tabControl1);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "main";
-            this.Text = "Form1";
+            this.Text = "Knjižnjica";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
